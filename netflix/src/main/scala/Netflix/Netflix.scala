@@ -4,9 +4,19 @@ import scala.collection.mutable.ListBuffer
 
 class Netflix {
     /*Atributos*/
-    private var peliculas = new ListBuffer[Pelicula]()
-    private var usuarios = new ListBuffer[Usuario]()
-    private var registros = new ListBuffer[Registro]()
-    private var planes = new ListBuffer[Plan]()
-    
+    var peliculas : List[Pelicula] = List()
+    var usuarios : List[Usuario] = List()
+    var registros : List[Registro] = List()
+    var planes : List[Plan] = List()
+
+    /*Métodos*/
+    def registroUsuario(cuenta : String, contra : String) : Unit = {
+        println("0")
+    }
+    def logeoUsuario(cuenta : String, contra : String) : Unit = {
+        println("0")
+    }
+    def buscarPelicula(nombre : String) : Unit = {
+        println("0")
+    }
 }
