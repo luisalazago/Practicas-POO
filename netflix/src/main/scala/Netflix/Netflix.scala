@@ -1,13 +1,13 @@
 package Netflix
 
-import scala.collection.mutable.ListBuffer
-
 class Netflix {
     /*Atributos*/
-    var peliculas : List[Pelicula] = List()
-    var usuarios : List[Usuario] = List()
-    var registros : List[Registro] = List()
-    var planes : List[Plan] = List()
+    var _peliculas : List[Pelicula] = List()
+    var _usuarios : List[Usuario] = List()
+    var _registros : List[Registro] = List()
+    var _planes : List[Plan] = List()
+
+    /*Setters*/
 
     /*Métodos*/
     def registroUsuario(cuenta : String, contra : String) : Unit = {
