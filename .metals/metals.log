@@ -59,3 +59,10 @@ abr 15, 2020 5:43:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellat
 ADVERTENCIA: Unmatched cancel notification for request id 2258
 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Netflix\Netflix.scala
 INFO  shutting down Metals
+INFO  started: Metals version 0.8.4 in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios'
+INFO  time: initialize in 0.92s
+WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Netflix\Netflix.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Peliculas\Peliculas.scala
+INFO  no build target: using presentation compiler with only scala-library
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Netflix\Netflix.scala
