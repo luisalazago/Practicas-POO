@@ -3,8 +3,16 @@ package Netflix
 import Usuario.Usuario
 import Usuario.UsuarioNormal
 
+/* Modificando comentarios
+ * By : Geiler
+ *
+ */
+
+ 
 class Netflix extends Usuario with UsuarioNormal {
+    
     /*Atributos*/
+
     var _peliculas : List[Pelicula] = List()
     private var _usuarios : List[Usuario] = List()
     private var _registros : List[Registro] = List()
