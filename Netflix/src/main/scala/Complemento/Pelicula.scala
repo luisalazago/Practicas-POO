@@ -28,7 +28,7 @@ class Pelicula {
     def getDuracion() : Double = _duracion
     def getPrecio() : Double = _precio
     def getVistas() : Int = _vistas
-
+    def getDescargas() : Int = _descargas
     
     def aumentarVistas() : Unit = _vistas = _vistas + 1
 
