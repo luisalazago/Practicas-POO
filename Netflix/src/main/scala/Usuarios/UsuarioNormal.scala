@@ -2,7 +2,7 @@ package Usuarios
 
 import Complemento._
 import Planes._
-import Netflix._
+import Netfliix._
 
 
 class UsuarioNormal extends Usuario {

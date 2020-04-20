@@ -1,4 +1,4 @@
-package Netflix
+package Netfliix
 
 import Usuarios._
 import Complemento._
@@ -112,8 +112,8 @@ class Netflix {
             }
         }
 
-        if (es_admin == true ) 
-            var pelicula : Pelicula = new Pelicula
+       /* if (es_admin == true ) 
+            var pelicula : Pelicula = new Pelicula*/
 
         /* En proceso */ 
         

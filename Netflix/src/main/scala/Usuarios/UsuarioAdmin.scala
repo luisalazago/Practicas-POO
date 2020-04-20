@@ -1,6 +1,6 @@
 package Usuarios
 
-import Netflix._
+import Netfliix._
 import Complemento._
 import Planes._
 
