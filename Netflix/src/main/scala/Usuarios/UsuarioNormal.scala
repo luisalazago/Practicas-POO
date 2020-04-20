@@ -41,8 +41,6 @@ class UsuarioNormal extends Usuario {
         }
     }
     
-    def pagarFactura() : Unit = {
-    }
 
     def comprarPlan(obj_netflix : Netflix, plan_seleccionado : Plan ) : Netflix = {
 

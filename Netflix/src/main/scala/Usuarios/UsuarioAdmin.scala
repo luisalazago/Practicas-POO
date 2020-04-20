@@ -116,7 +116,6 @@ class UsuarioAdmin extends Usuario {
 
                                     meses_en_mora = meses_en_mora - 12
                                 }
-                                
                             }
 
                             else {
@@ -127,12 +126,9 @@ class UsuarioAdmin extends Usuario {
                             return meses_en_mora
                         }
                     }
-
                 } 
-            
             }
         }
-
 
         return meses_en_mora
     }
