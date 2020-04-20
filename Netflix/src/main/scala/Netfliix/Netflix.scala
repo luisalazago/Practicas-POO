@@ -215,9 +215,7 @@ class Netflix {
 
     def generarFactura(id_usuario : String, nombre_usuario : String, nuevo_plan : Plan ) : Factura = {
 
-        var valor : Double = nuevo_plan.getPrecio()
-        var descripcion : String = "Su comprar al plan " + nuevo_plan.getNombre() + " tiene nuevas politicas."
-        var nueva_factura : Factura = new Factura(id_usuario, nombre_usuario, valor, descripcion)
+        var nueva_factura : Factura = new Factura(id_usuario, nombre_usuario, nuevo_plan)
     
         return nueva_factura
     }

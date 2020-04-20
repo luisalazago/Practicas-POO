@@ -1,5 +1,6 @@
 package Complemento
 
+import Planes.Plan
 import scala.util.Random
 
 class Factura {
@@ -16,17 +17,23 @@ class Factura {
     private var _cobro_adicional : Double = _
     private var _cancelada : Boolean = _
 
-
-    def this(id_cliente : String, nombre_cliente : String, costo : Double, nueva_descripcion : String) {
+    def this(id_cliente : String, nombre_cliente : String, plan : Plan) {
         
         this()
         _id_cliente = id_cliente
         _nombre_cliente = nombre_cliente
-        _subtotal = costo
-        _total = costo 
+
+        /* Aquí está el problema */
+        
+        _subtotal = plan.getPrecio() 
+        _total = plan.getPrecio() 
+        _descripcion = plan.getDescripcion() :: _descripcion
+        
+        /*  Aquí finaliza el problema */
+        
         _cobro_adicional = 0
         _cancelada = false
-        _descripcion = nueva_descripcion :: _descripcion
+       
     }
     
     def getIdCliente() : String = _id_cliente

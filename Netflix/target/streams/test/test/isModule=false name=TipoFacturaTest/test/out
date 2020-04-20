@@ -1,5 +1,1 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mTipoFacturaTest:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Al generar una factura se asigna un fecha de expedicion automaticamente.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Al generar una factura se asigna un fecha de vencimiento automaticamente.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Al generar una factura se asigna un ID automaticamente[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- Al generar una factura su estado (cancelada, no cancelada) siempre es false (no calcelada).[0m[0m

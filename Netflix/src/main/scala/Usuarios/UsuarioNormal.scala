@@ -23,6 +23,7 @@ class UsuarioNormal extends Usuario {
         _plan = nuevo_plan
         _estado = true
         _plan = null
+        
     }
     
 
