@@ -43,9 +43,8 @@ class Netflix {
 
         for ( user <- _usuarios_admin) {
 
-            if (user.getNombre() == correo && user.getContrasena() == contrasena ) {
+            if (user.getNombre() == correo && user.getContrasena() == contrasena ) 
                 return user
-            }
         }
 
         return null
@@ -55,16 +54,14 @@ class Netflix {
 
         for ( user <- _usuarios_normales) {
 
-            if (user.getNombre() == correo && user.getContrasena() == contrasena ) {
+            if (user.getNombre() == correo && user.getContrasena() == contrasena )
                 return user
-            }
         }
 
         return null
     }
 
     def buscarUsuario(nombre : String ) : Boolean = {
-
 
         for (n <- _usuarios_normales) {
             
@@ -85,10 +82,8 @@ class Netflix {
 
         for (pelicula <- _peliculas) {
             
-            if (pelicula.getNombre() == nombre_pelicula) {
-
+            if (pelicula.getNombre() == nombre_pelicula) 
                 return pelicula
-            }
         }
 
         return null
@@ -117,17 +112,12 @@ class Netflix {
             }
         }
 
-        if (es_admin == true ) {
-
+        if (es_admin == true ) 
             var pelicula : Pelicula = new Pelicula
-        }
 
-        else {
-            
-        }
+        /* En proceso */ 
         
     }
-
 
     def solicitudCompraPlan(id_usuario : String,  plan_seleccionado : Plan ) : Unit = {
 
@@ -153,10 +143,8 @@ class Netflix {
 
             if ( _usuarios_normales(pos).getEstado() == true ) {
 
-                if ( _usuarios_normales(pos).getPlan() == null ) {
-
+                if ( _usuarios_normales(pos).getPlan() == null )
                     apto_para_comprar = true
-                }
 
                 else {
                     
@@ -185,12 +173,11 @@ class Netflix {
                     }
                 }
             }
-
         }  
-
 
         if ( band == true && apto_para_comprar == true ) {
             
+            /* Aqui se verifica el saldo de la tarjeta */
             //var saldo : Double = _usuarios_normales(pos).getSaldo()
             //var costo : Double = plan_seleccionado.getPrecio()
 
@@ -232,6 +219,7 @@ class Netflix {
                     factura_cancelada = false
                     break
                 }
+                
                 pos_factura = pos_factura + 1
             }
 
