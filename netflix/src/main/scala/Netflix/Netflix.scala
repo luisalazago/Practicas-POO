@@ -6,7 +6,8 @@ import Usuario.UsuarioNormal
 class Netflix extends Usuario with UsuarioNormal {
     
     /*Atributos*/
-
+    /* Cambio geiler */
+    
     private var _peliculas : List[Pelicula] = List()
     private var _usuarios : List[Usuario] = List()
     private var _registros : List[Registro] = List()
