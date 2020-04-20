@@ -58,4 +58,11 @@ class UsuarioNormal extends Usuario {
 
         _descargas = nueva_pelicula :: _descargas
     }
+
+    def descargarPelicula(obj_netflix : Netflix, nombre_peli :  String) : Netflix =  { 
+        
+       obj_netflix.solicitudDescargar(nombre_peli, this.getIdUsuario())
+
+       return  obj_netflix
+    }
 }

@@ -29,12 +29,4 @@ class Usuario {
     }    
     
 
-    def descargarPelicula(obj_netflix : Netflix, nombre_peli :  String) : Netflix =  { 
-        
-       obj_netflix.solicitudDescargar(nombre_peli, getIdUsuario())
-
-       return  obj_netflix
-    }
-
-
 }

@@ -132,7 +132,7 @@ class Netflix {
                 }
 
                 _facturas(pos).agregarCostoAdicional(7.800)
-                _facturas(pos).nuevaDescripcion("Descarga, pelicula " + nombre_pelicula)
+                _facturas(pos).nuevaDescripcion("Descarga, pelicula " + nombre_pelicula )
             }
         }
     }
@@ -274,4 +274,7 @@ class Netflix {
             }
         }
     }
+
+    def editarInformacion(id_usuario)
+
 }
