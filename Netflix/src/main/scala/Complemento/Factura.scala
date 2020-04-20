@@ -41,12 +41,13 @@ class Factura {
 
 
     def setCancelada(nuevo_estado : Boolean) : Unit = _cancelada = nuevo_estado
+    def nuevaDescripcion(nueva_descripcion : String ) : Unit = _descripcion = nueva_descripcion :: _descripcion
 
+    private def calcularTotal(valor : Double) : Unit  = _total = _total + valor
 
     private def generarID() : Int = {
 
         var id = Random.nextInt(19872332) + 9999999
-
         return id 
     }
     
@@ -60,37 +61,22 @@ class Factura {
 
         var mes_string : String = _fecha_expedicion.charAt(5) + "" +  _fecha_expedicion.charAt(6) + ""
         var mes_int : Int = mes_string.toInt
-
-        if (mes_int == 12) {
-            mes_int = 1
-        }
-
-        else {
-            mes_int = mes_int + 1
-        }
-
         var fecha_t : String = ""
 
-        if (mes_int > 9) {
-            
-            fecha_t = _fecha_expedicion.substring(0, 5) + mes_int + "" + _fecha_expedicion.substring(7, 10)
-        }
-        else {
-            fecha_t = _fecha_expedicion.substring(0, 5) + "0" + mes_int + "" + _fecha_expedicion.substring(7, 10)
-        }
+
+        if (mes_int == 12)  mes_int = 1
+
+        else mes_int = mes_int + 1
        
+
+        if (mes_int > 9 )
+            fecha_t = _fecha_expedicion.substring(0, 5) + mes_int + "" + _fecha_expedicion.substring(7, 10)
+        
+        else 
+            fecha_t = _fecha_expedicion.substring(0, 5) + "0" + mes_int + "" + _fecha_expedicion.substring(7, 10)   
         
         return fecha_t
     }
-
-    private def calcularTotal(valor : Double) : Unit  = {
-        _total = _total + valor
-    }
-    
-    def nuevaDescripcion(nueva_descripcion : String ) : Unit = {
-
-        _descripcion = nueva_descripcion :: _descripcion
-    }   
 
     def agregarCostoAdicional(nuevo_cobro_adicional : Double) : Unit = {
 
@@ -98,9 +84,5 @@ class Factura {
             _cobro_adicional = _cobro_adicional + nuevo_cobro_adicional
             calcularTotal(nuevo_cobro_adicional)
         }
-
     }
-
-
-
 }
