@@ -11,7 +11,7 @@ class UsuarioNormal extends Usuario {
     private var _plan : Plan = _
     private var _estado : Boolean = _
     private var _tarjeta : Double = 28.250;
-
+    protected var _descargas : List[Pelicula] = List()
 
     def this(nuevo_correo : String, nueva_contrasena : String, nuevo_nombre : String, nuevo_plan : Plan) {   
        
@@ -53,5 +53,9 @@ class UsuarioNormal extends Usuario {
 
         obj_netflix.solicitudPagarFactura(getIdUsuario())
         return obj_netflix
+    }
+    def guardarPelicula(nueva_pelicula : Pelicula ) : Unit = {
+
+        _descargas = nueva_pelicula :: _descargas
     }
 }

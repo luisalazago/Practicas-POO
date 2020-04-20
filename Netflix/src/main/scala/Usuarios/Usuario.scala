@@ -12,7 +12,7 @@ class Usuario {
     protected var _nombre :  String = _
     protected var _correo :  String = _
     protected var _contrasena : String = _
-    protected var _descargas : List[Pelicula] = List()
+    
     
     /* Getters */
 
@@ -29,13 +29,12 @@ class Usuario {
     }    
     
 
-    def descargarPelicula(nombre_peli :  String) : Unit =  { 
+    def descargarPelicula(obj_netflix : Netflix, nombre_peli :  String) : Netflix =  { 
         
-       // Netflix.solicitudDescarga(nombre_peli, _id_usario)
+       obj_netflix.solicitudDescargar(nombre_peli, getIdUsuario())
+
+       return  obj_netflix
     }
 
-   def guardarPelicula(nueva_pelicula : Pelicula ) : Unit = {
 
-        _descargas = nueva_pelicula :: _descargas
-    }
 }
