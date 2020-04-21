@@ -78,3 +78,42 @@ WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Terce
 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Planes\Planes.scala
 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Netflix\Netflix.scala
 INFO  no build target: using presentation compiler with only scala-library
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Planes\PlanBasico.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Planes\PlanEstandar.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Planes\PlanPremiun.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Netfliix\Netflix.scala
+something's wrong: no file:///c%3A/Users/HP/Desktop/Universidad/Tercer%20Semestre/Programaci%C3%B3n%20Orientada%20a%20Objetos/Repositorios/Netflix/src/main/scala/Netfliix/Netflix.scala in List[<error>]RangePosition(file:///c%3A/Users/HP/Desktop/Universidad/Tercer%20Semestre/Programaci%C3%B3n%20Orientada%20a%20Objetos/Repositorios/Netflix/src/main/scala/Netfliix/Netflix.scala, 193, 193, 207)
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Usuarios\Usuario.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Usuarios\UsuarioAdmin.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Usuarios\UsuarioNormal.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Pelicula.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Registro.scala
+INFO  shutting down Metals
+INFO  started: Metals version 0.8.4 in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios'
+INFO  time: initialize in 1.47s
+WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Registro.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Pelicula.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Practicas\comidarapida\src\main\scala\Alimentos\Alimentos.scala
+WARN  no build target for: C:\Users\HP\Desktop\Casting.scala
+INFO  no build target: using presentation compiler with only scala-library
+abr 20, 2020 4:14:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 7
+abr 20, 2020 4:14:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 6
+abr 20, 2020 4:14:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 11
+abr 20, 2020 4:14:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 10
+abr 20, 2020 4:14:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 13
+abr 20, 2020 4:14:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 18
+WARN  no build target for: C:\Users\HP\Desktop\Casting.scala
+WARN  no build target for: C:\Users\HP\Desktop\Casting.scala
+INFO  shutting down Metals
+INFO  started: Metals version 0.8.4 in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios'
+INFO  time: initialize in 0.95s
+WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Pelicula.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Pelicula.scala
