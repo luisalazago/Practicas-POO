@@ -20,19 +20,15 @@ class Factura {
     def this(id_cliente : String, nombre_cliente : String, plan : Plan) {
         
         this()
+
         _id_cliente = id_cliente
         _nombre_cliente = nombre_cliente
-
-        /* Aquí está el problema */
-        
         _subtotal = plan.getPrecio() 
         _total = plan.getPrecio() 
         _descripcion = plan.getDescripcion() :: _descripcion
-        
-        /*  Aquí finaliza el problema */
-        
         _cobro_adicional = 0
         _cancelada = false
+         _descripcion = plan.getDescripcion() :: _descripcion
        
     }
     

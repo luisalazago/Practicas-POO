@@ -10,7 +10,7 @@ class UsuarioNormal extends Usuario {
     private var _mora : Boolean = _
     private var _plan : Plan = _
     private var _estado : Boolean = _
-    private var _tarjeta : Double = 28.250;
+    private var _tarjeta : Double = 128.250;
     protected var _descargas : List[Pelicula] = List()
 
     def this(nuevo_correo : String, nueva_contrasena : String, nuevo_nombre : String, nuevo_plan : Plan) {   
@@ -22,7 +22,6 @@ class UsuarioNormal extends Usuario {
         _mora = false
         _plan = nuevo_plan
         _estado = true
-        _plan = null
         
     }
     
@@ -37,9 +36,8 @@ class UsuarioNormal extends Usuario {
     
     def cobroPlan(valor : Double ) : Unit = {
 
-        if (valor <= _tarjeta ) {
+        if (valor < _tarjeta ) 
             _tarjeta = _tarjeta - valor
-        }
     }
     
 
@@ -53,6 +51,7 @@ class UsuarioNormal extends Usuario {
     def pagarFactura(obj_netflix : Netflix ) : Netflix = {
 
         obj_netflix.solicitudPagarFactura(getIdUsuario())
+        
         return obj_netflix
     }
     def guardarPelicula(nueva_pelicula : Pelicula ) : Unit = {

@@ -8,19 +8,14 @@ import Planes._
 
 class TipoFacturaTest extends FunSuite with BeforeAndAfter {
     
-    var plan : Plan = new Plan("PREMIUN")
-    var cliente : UsuarioNormal = new UsuarioNormal("harold@comp.org", "#7j3u12pd&%", "Harold Mauricio Hipia", plan)
-    var tipo_factura : Factura = new Factura( cliente.getIdUsuario(), cliente.getNombre(), cliente.getPlan() )
+    var tipo_plan : Plan = new Plan("PREMIUN")
 
-    /*before {
-
-
-//        tipo_factura.set
-        
-    }*/
+    var tipo_cliente : UsuarioNormal = new UsuarioNormal("harold@comp.org", "#7j3u12pd&%", "Harold Mauricio Hipia", tipo_plan)
     
+    var tipo_factura : Factura = new Factura( tipo_cliente.getIdUsuario(), tipo_cliente.getNombre(), tipo_cliente.getPlan() )
 
-  /*  test("Al generar una factura se asigna un fecha de expedicion automaticamente.") {
+
+    test("Al generar una factura se asigna un fecha de expedicion automaticamente.") {
         
         assert (tipo_factura.getFechaExpedicion() != "")
     }
@@ -38,20 +33,32 @@ class TipoFacturaTest extends FunSuite with BeforeAndAfter {
     test("Al generar una factura su estado (cancelada, no cancelada) siempre es false (no calcelada).") {
 
         assert (tipo_factura.getCancelada() != true)
-    }*/
-/*
+    } 
+
     test("Al generar un nuevo costo, el costo adicional; (anterior) de la factura debe ser menor al nuevo costo adicional.") {
 
+        var ant_cobro_adicional : Double =  tipo_factura.getCobroAdicional()
 
-        assert (tipo_factura.getCobroAdicional()> ant_subtotal)
+        tipo_factura.agregarCostoAdicional(7.800)        
+        assert (tipo_factura.getCobroAdicional() > ant_cobro_adicional)
 
-    }  */ 
+    } 
 
-    
+    test("Al cobrar una factura, el dinero del cliente se le debe restar n cantidad (donde n es el valor total de la factura).") {
 
-    /*test("Al pagar una factura su estado debe ser: cancelada (true).") {
+        var total_factura : Double = tipo_factura.getTotal()
+        var saldo : Double = tipo_cliente.getSaldo()
 
-       // tipo_factura.setCancelada(true)
-        //assert (tipo_factura.getCancelada() == true)
-    }*/
+        tipo_cliente.cobroPlan(total_factura)
+
+        assert (tipo_cliente.getSaldo() == saldo  - total_factura )
+        
+
+    }
+
+    test("Al pagar una factura su estado debe ser: cancelada (true).") {
+
+        tipo_factura.setCancelada(true)
+        assert (tipo_factura.getCancelada() == true)
+    }
 }
