@@ -1,4 +1,6 @@
 #Successful Tests
-#Mon Apr 20 19:29:17 COT 2020
-TipoPeliculaTest=1587428957588
-TipoFacturaTest=1587428957750
+#Mon Apr 20 20:52:28 COT 2020
+TipoUsuarioNormalTest=1587433948281
+TipoPeliculaTest=1587432960743
+TipoFacturaTest=1587432960822
+TipoPlanTest=1587432960836

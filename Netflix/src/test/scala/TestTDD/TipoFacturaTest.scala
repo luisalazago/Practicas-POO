@@ -8,11 +8,11 @@ import Planes._
 
 class TipoFacturaTest extends FunSuite with BeforeAndAfter {
     
-    var tipo_plan : Plan = new Plan("PREMIUN")
+    var plan : Plan = new Plan("PREMIUN")
 
-    var tipo_cliente : UsuarioNormal = new UsuarioNormal("harold@comp.org", "#7j3u12pd&%", "Harold Mauricio Hipia", tipo_plan)
+    var cliente : UsuarioNormal = new UsuarioNormal("harold@comp.org", "#7j3u12pd&%", "Harold Mauricio Hipia", plan)
     
-    var tipo_factura : Factura = new Factura( tipo_cliente.getIdUsuario(), tipo_cliente.getNombre(), tipo_cliente.getPlan() )
+    var tipo_factura : Factura = new Factura( cliente.getIdUsuario(), cliente.getNombre(), cliente.getPlan() )
 
 
     test("Al generar una factura se asigna un fecha de expedicion automaticamente.") {
@@ -47,11 +47,11 @@ class TipoFacturaTest extends FunSuite with BeforeAndAfter {
     test("Al cobrar una factura, el dinero del cliente se le debe restar n cantidad (donde n es el valor total de la factura).") {
 
         var total_factura : Double = tipo_factura.getTotal()
-        var saldo : Double = tipo_cliente.getSaldo()
+        var saldo : Double = cliente.getSaldo()
 
-        tipo_cliente.cobroPlan(total_factura)
+        cliente.cobroPlan(total_factura)
 
-        assert (tipo_cliente.getSaldo() == saldo  - total_factura )
+        assert (cliente.getSaldo() == saldo  - total_factura )
         
 
     }

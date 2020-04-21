@@ -4,16 +4,20 @@ import Complemento._
 import Planes._
 import Netfliix._
 
-import scala.util.Random
 
 class Usuario {
     
-    protected var _id_usario : String = generarID()
+    protected var _id_usario : String = GeneradorCodigo.crearCodigoAlphaNumerico()
     protected var _nombre :  String = _
     protected var _correo :  String = _
     protected var _contrasena : String = _
     
+    /* Setters */
     
+    def setNombre(nuevo_nombre : String ) : Unit = _nombre = nuevo_nombre
+    def setCorreo(nuevo_correo : String ) : Unit = _correo = nuevo_correo
+    def setContrasena(nueva_contrasena : String ) : Unit = _contrasena = nueva_contrasena
+
     /* Getters */
 
     def getNombre() : String = _nombre
@@ -21,12 +25,7 @@ class Usuario {
     def getContrasena() : String = _contrasena
     def getIdUsuario() : String = _id_usario
 
-    def generarID() : String = {
-
-        var id : String = Random.alphanumeric.take(10).mkString("")
-        
-        return id
-    }    
     
+
 
 }

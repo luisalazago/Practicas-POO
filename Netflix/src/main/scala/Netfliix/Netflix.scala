@@ -273,6 +273,5 @@ class Netflix {
         }
     }
 
-   // def editarInformacion(id_usuario : String)
 
 }

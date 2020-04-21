@@ -1,0 +1,10 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mTipoPlanTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear un plan premiun, el usuario puede ver peliculas sin HD[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear un plan premiun, el usuario puede ver peliculas en HD[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear un plan premiun, el usuario puede ver peliculas en ULTRA HD[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear un plan estadar, el usuario puede ver peliculas sin HD[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear un plan estandar, el usuario puede ver peliculas en HD[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear un plan estandar, el usuario NO puede ver peliculas en ULTRA HD[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear un plan basico, el usuario puede ver peliculas sin HD[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear un plan basico, el usuario NO puede ver peliculas en HD[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear un plan basico, el usuario NO puede ver peliculas en ULTRA HD[0m[0m

@@ -325,3 +325,16 @@ compile
 test
 compile
 test
+compile
+test
+compile
+testOnly TipoPeliculaTest
+compile
+testOnly TipoPeliculaTest
+testOnly TipoPlanTest
+testOnly TipoFacturaTest
+compile
+test
+compile
+test
+testOnly TipoUsuarioNormalTest
