@@ -1,12 +1,12 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(TipoFacturaTest, org.scalatest.tools.Framework$$anon$1@2d766a8e, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(TipoPeliculaTest, org.scalatest.tools.Framework$$anon$1@2d766a8e, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(TipoUsuarioNormalTest, org.scalatest.tools.Framework$$anon$1@2d766a8e, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(TipoPlanTest, org.scalatest.tools.Framework$$anon$1@2d766a8e, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(TipoNetflixTest, org.scalatest.tools.Framework$$anon$1@2d766a8e, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 553 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 24[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(TipoPlanTest, org.scalatest.tools.Framework$$anon$1@35afc6cd, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(TipoPeliculaTest, org.scalatest.tools.Framework$$anon$1@35afc6cd, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(TipoUsuarioNormalTest, org.scalatest.tools.Framework$$anon$1@35afc6cd, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(TipoNetflixTest, org.scalatest.tools.Framework$$anon$1@35afc6cd, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(TipoFacturaTest, org.scalatest.tools.Framework$$anon$1@35afc6cd, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 705 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 25[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 5, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 24, failed 0, canceled 0, ignored 0, pending 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 25, failed 0, canceled 0, ignored 0, pending 2[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	TipoPlanTest[0m

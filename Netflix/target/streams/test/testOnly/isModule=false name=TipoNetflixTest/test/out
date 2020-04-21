@@ -1,0 +1,4 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mTipoNetflixTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Cuando se registre un usuario como administrador, la lista de administrador debe aumentar en 1.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Cuando se registre un usuario, la lista de usuarios normales debe aumentar en 1.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Cuando un usuario se registre, debe tener un plan seleccionado un plan[0m[0m

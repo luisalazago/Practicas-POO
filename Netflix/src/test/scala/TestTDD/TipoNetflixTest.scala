@@ -7,7 +7,7 @@ import Usuarios._
 
 class TipoNetflixTest extends FunSuite {
 
-    var tipo_Netflix : Netflix = new Netflix()
+    var tipo_netflix : Netflix = new Netflix()
 
     var plan_1 : Plan = new Plan("PREMIUN")
     var plan_2 : Plan = new Plan("ESTANDAR")
@@ -25,17 +25,58 @@ class TipoNetflixTest extends FunSuite {
     var administrador_2 : UsuarioAdmin = new UsuarioAdmin( "master@eternet.net", "master", "Leo valderrama" )
     var administrador_3 : UsuarioAdmin = new UsuarioAdmin( "gerente@motzk.net", "master", "Murphi perla" )
 
-
-    var pelicula_1 : Pelicula = new Pelicula( "Interestelar II", generos, 169, 9.400 )
-    var pelicula_2 : Pelicula = new Pelicula( "Titanic", generos, 156, 5.677 )
-    var pelicula_3 : Pelicula = new Pelicula( "Francotirador", generos, 178, 7.650 )
-
     var generos_1 : List[String] = List()
     var generos_2 : List[String] = List()
-    var generos_2 : List[String] = List() 
+    var generos_3 : List[String] = List() 
 
     generos_1 = "CIENCIA FICCION" :: "DRAMA" :: "MISTERIO" :: "AVENTURAS" :: "EPICO" :: generos_1
     generos_2 = "ROMANTICO" :: "CATASTROFE" :: "DRAMA" :: "EPICO" :: "HISTORICO" :: generos_2
     generos_3 = "BELICO" :: "DRAMA" :: "HISTORICO" :: "ACCION" :: "AVENTURA" :: generos_3
-      
+    
+    var pelicula_1 : Pelicula = new Pelicula( "Interestelar II", generos_1, 169, 9.400 )
+    var pelicula_2 : Pelicula = new Pelicula( "Titanic", generos_2, 156, 5.677 )
+    var pelicula_3 : Pelicula = new Pelicula( "Francotirador", generos_3, 178, 7.650 )
+
+
+    test("Cuando se registre un usuario como administrador, la lista de administrador debe aumentar en 1.") {
+
+        var tamano_usuarios_ant :  Int = 0
+        var tamano_usuarios_act :  Int = 0
+        
+        for (n <- tipo_netflix.getUsuariosAdministradores() ) tamano_usuarios_ant += 1
+
+        tipo_netflix.registroUsuarioAdmin(administrador_1)
+
+        for (n <- tipo_netflix.getUsuariosAdministradores() ) tamano_usuarios_act += 1
+
+        assert (tamano_usuarios_act == tamano_usuarios_ant + 1)
+    }
+
+    
+    test("Cuando se registre un usuario, la lista de usuarios normales debe aumentar en 1.") {
+
+        var tamano_usuarios_ant :  Int = 0
+        var tamano_usuarios_act :  Int = 0
+        
+        for (n <- tipo_netflix.getUsuariosNormales() ) tamano_usuarios_ant += 1
+
+        tipo_netflix.registroUsuario(cliente_1)
+
+        for (n <- tipo_netflix.getUsuariosNormales() ) tamano_usuarios_act += 1
+
+        assert (tamano_usuarios_act == tamano_usuarios_ant + 1)
+    }
+
+    test("Cuando un usuario se registre, debe tener un plan seleccionado un plan") {
+
+        var pos : Int = 0
+
+        for (n <- tipo_netflix.getUsuariosNormales() ) pos += 1
+
+        tipo_netflix.registroUsuario(cliente_2)
+
+        assert (tipo_netflix.getUsuariosNormales()(pos).getPlan() != null)
+
+    }
+
 }

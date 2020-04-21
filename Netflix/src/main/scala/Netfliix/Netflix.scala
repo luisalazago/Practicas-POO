@@ -34,7 +34,7 @@ class Netflix {
         _usuarios_normales = nuevo_usuario :: _usuarios_normales
     }
 
-    def crearUsuarioAdmin(nuevo_usuario_admin : UsuarioAdmin ) : Unit = {
+    def registroUsuarioAdmin(nuevo_usuario_admin : UsuarioAdmin ) : Unit = {
 
         _usuarios_admin = nuevo_usuario_admin :: _usuarios_admin 
     }
