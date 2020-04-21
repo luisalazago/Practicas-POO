@@ -17,7 +17,7 @@ class Netflix {
     private var _facturas : List[Factura] = List()
 
     //private var _registros : List[Registro] = List()
-    //private var _planes : List[Plan] = List()
+    private var _planes : List[String] = List("PREMIUN", "ESTANDAR", "BASICA")
 
     def getPeliculas() : List[Pelicula] = _peliculas
     def getUsuariosNormales() : List[UsuarioNormal] = _usuarios_normales

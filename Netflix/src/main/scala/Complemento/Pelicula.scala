@@ -31,7 +31,7 @@ class Pelicula {
     def getVistas() : Int = _vistas
     def getDescargas() : Int = _descargas
     
-    def aumentarVistas() : Unit = _vistas = _vistas + 1
+    def reproducir() : Unit = _vistas = _vistas + 1
 
 
 }

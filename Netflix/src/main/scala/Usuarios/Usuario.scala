@@ -25,7 +25,10 @@ class Usuario {
     def getContrasena() : String = _contrasena
     def getIdUsuario() : String = _id_usario
 
+    /* En proceso */
     
+    def verPeliula() : Unit = {
 
+    }
 
 }
