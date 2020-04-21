@@ -1,11 +1,12 @@
 package Complemento
 
-import scala.util.Random
+import Planes.Plan
+
 
 class Factura {
 
 
-    private var _id_factura : Int = generarID()
+    private var _id_factura : Int = GeneradorCodigo.crearCodigoNumerico()
     private var _id_cliente : String = _
     private var _nombre_cliente : String = _ 
     private var _fecha_expedicion : String = generarFechaExpedicion() 
@@ -16,17 +17,19 @@ class Factura {
     private var _cobro_adicional : Double = _
     private var _cancelada : Boolean = _
 
-
-    def this(id_cliente : String, nombre_cliente : String, costo : Double, nueva_descripcion : String) {
+    def this(id_cliente : String, nombre_cliente : String, plan : Plan) {
         
         this()
+
         _id_cliente = id_cliente
         _nombre_cliente = nombre_cliente
-        _subtotal = costo
-        _total = costo 
+        _subtotal = plan.getPrecio() 
+        _total = plan.getPrecio() 
+        _descripcion = plan.getDescripcion() :: _descripcion
         _cobro_adicional = 0
         _cancelada = false
-        _descripcion = nueva_descripcion :: _descripcion
+         _descripcion = plan.getDescripcion() :: _descripcion
+       
     }
     
     def getIdCliente() : String = _id_cliente
@@ -45,11 +48,6 @@ class Factura {
 
     private def calcularTotal(valor : Double) : Unit  = _total = _total + valor
 
-    private def generarID() : Int = {
-
-        var id = Random.nextInt(19872332) + 9999999
-        return id 
-    }
     
     private def generarFechaExpedicion() : String = {
 

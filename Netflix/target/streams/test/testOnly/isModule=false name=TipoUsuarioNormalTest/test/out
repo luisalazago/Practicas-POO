@@ -1,0 +1,7 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mTipoUsuarioNormalTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Cuando se crea un usuario normal, debe tener un nombre[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Cuando se crea un usuario normal, debe tener un correo[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Cuando se crea un usuario normal, debe tener una contrasena [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Cuando se crea un usuario normal, se le asigna un ID automaticamente[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- Si el usuario tiene un plan, entonces tiene una factura. (pending)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- Si el usuario tiene dinero entonces puede comprar un plan. (pending)[0m[0m

@@ -156,7 +156,7 @@ class UsuarioAdmin extends Usuario {
 
     def crearUsuarioAdministrativo(obj_netflix : Netflix, nuevo_adim : UsuarioAdmin ) : Netflix = {
 
-        obj_netflix.crearUsuarioAdmin(nuevo_adim )
+        obj_netflix.registroUsuarioAdmin(nuevo_adim )
 
         return obj_netflix     
     } 

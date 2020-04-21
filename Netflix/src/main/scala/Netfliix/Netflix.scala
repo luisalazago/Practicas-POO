@@ -17,7 +17,7 @@ class Netflix {
     private var _facturas : List[Factura] = List()
 
     //private var _registros : List[Registro] = List()
-    //private var _planes : List[Plan] = List()
+    private var _planes : List[String] = List("PREMIUN", "ESTANDAR", "BASICA")
 
     def getPeliculas() : List[Pelicula] = _peliculas
     def getUsuariosNormales() : List[UsuarioNormal] = _usuarios_normales
@@ -34,7 +34,7 @@ class Netflix {
         _usuarios_normales = nuevo_usuario :: _usuarios_normales
     }
 
-    def crearUsuarioAdmin(nuevo_usuario_admin : UsuarioAdmin ) : Unit = {
+    def registroUsuarioAdmin(nuevo_usuario_admin : UsuarioAdmin ) : Unit = {
 
         _usuarios_admin = nuevo_usuario_admin :: _usuarios_admin 
     }
@@ -78,7 +78,7 @@ class Netflix {
         return false
     }
 
-    def buscarPelicua(nombre_pelicula : String ) : Pelicula = {
+    def buscarPelicula(nombre_pelicula : String ) : Pelicula = {
 
         for (pelicula <- _peliculas) {
             
@@ -94,29 +94,47 @@ class Netflix {
         _peliculas = nueva_pelicula :: _peliculas
     } 
 
-    def solicitudDescarga(nombre_pelicula : String, id_emisor : String ) : Unit = {
+    def solicitudDescargar(nombre_pelicula : String, id_usuario : String ) : Unit = {
 
-        var es_admin : Boolean = false 
-        var pos_emisor : Int = 0
-        var iter : Int = 0
+        var pos_usuario : Int = 0
+        var band : Boolean = false
 
         breakable {
 
-            for (admin <- _usuarios_admin) {
+            for (usuario <- _usuarios_normales ) {
 
-                if (admin.getIdUsuario() == id_emisor) {
-                    es_admin = true
-                    pos_emisor = iter
+                if (usuario.getIdUsuario() == id_usuario ) {
+                    band = true
+                    break
                 }
-                iter = iter + 1
+                pos_usuario = pos_usuario + 1
             }
         }
 
-       /* if (es_admin == true ) 
-            var pelicula : Pelicula = new Pelicula*/
+        if (band == true) {
 
-        /* En proceso */ 
-        
+            if (_usuarios_normales(pos_usuario).getEstado() == true) {
+
+                var pos : Int = 0
+
+                _usuarios_normales(pos_usuario).guardarPelicula(buscarPelicula(nombre_pelicula)) 
+                _usuarios_normales(pos_usuario)
+
+                breakable {
+
+                    for (factura <- _facturas) {
+
+                        if (factura.getIdCliente() == id_usuario)
+                            break
+
+                        pos = pos + 1
+                    }
+                }
+
+                _facturas(pos).agregarCostoAdicional(7.800)
+                _facturas(pos).nuevaDescripcion("Descarga, pelicula " + nombre_pelicula )
+            }
+        }
     }
 
     def solicitudCompraPlan(id_usuario : String,  plan_seleccionado : Plan ) : Unit = {
@@ -197,9 +215,7 @@ class Netflix {
 
     def generarFactura(id_usuario : String, nombre_usuario : String, nuevo_plan : Plan ) : Factura = {
 
-        var valor : Double = nuevo_plan.getPrecio()
-        var descripcion : String = "Su comprar al plan " + nuevo_plan.getNombre() + " tiene nuevas politicas."
-        var nueva_factura : Factura = new Factura(id_usuario, nombre_usuario, valor, descripcion)
+        var nueva_factura : Factura = new Factura(id_usuario, nombre_usuario, nuevo_plan)
     
         return nueva_factura
     }
@@ -256,4 +272,6 @@ class Netflix {
             }
         }
     }
+
+
 }
