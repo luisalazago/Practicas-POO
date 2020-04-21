@@ -1,1 +1,5 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mTipoPeliculaTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Una pelicula debe tener un nombre especifico[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Una pelicula debe tener al menos un genero. [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear una pelicula las descargas son siempre 0.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Al crear una pelicula las vistas son siempre 0.[0m[0m
