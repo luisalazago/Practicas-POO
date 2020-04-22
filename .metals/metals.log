@@ -117,3 +117,27 @@ INFO  time: initialize in 0.95s
 WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Pelicula.scala
 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Pelicula.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Netfliix\Netflix.scala
+INFO  no build target: using presentation compiler with only scala-library
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Factura.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Registro.scala
+INFO  shutting down Metals
+INFO  started: Metals version 0.8.4 in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios'
+INFO  time: initialize in 3.26s
+WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Registro.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Netfliix\Netflix.scala
+abr 21, 2020 11:45:30 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 5
+INFO  no build target: using presentation compiler with only scala-library
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Netflix\Netflix.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Factura.scala
+something's wrong: no file:///c%3A/Users/HP/Desktop/Universidad/Tercer%20Semestre/Programaci%C3%B3n%20Orientada%20a%20Objetos/Repositorios/Netflix/src/main/scala/Complemento/Factura.scala in List[String]RangePosition(file:///c%3A/Users/HP/Desktop/Universidad/Tercer%20Semestre/Programaci%C3%B3n%20Orientada%20a%20Objetos/Repositorios/Netflix/src/main/scala/Complemento/Factura.scala, 485, 485, 497)
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Planes\Plan.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\GeneradorCodigo.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Pelicula.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Complemento\Registro.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Usuarios\Usuario.scala
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Usuarios\UsuarioAdmin.scala
+something's wrong: no file:///c%3A/Users/HP/Desktop/Universidad/Tercer%20Semestre/Programaci%C3%B3n%20Orientada%20a%20Objetos/Repositorios/Netflix/src/main/scala/Usuarios/UsuarioAdmin.scala in List[Complemento.Pelicula]RangePosition(file:///c%3A/Users/HP/Desktop/Universidad/Tercer%20Semestre/Programaci%C3%B3n%20Orientada%20a%20Objetos/Repositorios/Netflix/src/main/scala/Usuarios/UsuarioAdmin.scala, 4215, 4215, 4229)
+WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Netflix\src\main\scala\Usuarios\UsuarioNormal.scala
