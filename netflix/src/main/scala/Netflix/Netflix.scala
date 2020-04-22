@@ -10,7 +10,7 @@ class Netflix extends Usuario with UsuarioNormal {
     private var _peliculas : List[Pelicula] = List()
     private var _usuarios : List[Usuario] = List()
     private var _registros : List[Registro] = List()
-    private var _planes : List[Planes] = List()
+    private var _planes : List[Plan] = List()
 
     /*Setters*/
 
