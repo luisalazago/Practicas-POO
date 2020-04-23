@@ -2,13 +2,15 @@ package Netflix
 
 import Usuario.Usuario
 import Usuario.UsuarioNormal
-
+ 
 class Netflix extends Usuario with UsuarioNormal {
+    
     /*Atributos*/
-    var _peliculas : List[Pelicula] = List()
-    var _usuarios : List[Usuario] = List()
-    var _registros : List[Registro] = List()
-    var _planes : List[Plan] = List()
+
+    private var _peliculas : List[Pelicula] = List()
+    private var _usuarios : List[Usuario] = List()
+    private var _registros : List[Registro] = List()
+    private var _planes : List[Plan] = List()
 
     /*Setters*/
 

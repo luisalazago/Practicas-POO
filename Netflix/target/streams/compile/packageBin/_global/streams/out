@@ -1,0 +1,33 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\netflix_2.13-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Complemento[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Complemento[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Complemento\Factura.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Complemento\Factura.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Complemento\Pelicula.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Complemento\Pelicula.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Complemento\Registro.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Complemento\Registro.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Netfliix[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Netfliix[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Netfliix\Netflix.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Netfliix\Netflix.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Planes[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Planes[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Planes\Plan.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Planes\Plan.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Test[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Test[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Test\Test$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Test\Test$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Test\Test.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Test\Test.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Usuarios[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Usuarios[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Usuarios\Usuario.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Usuarios\Usuario.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Usuarios\UsuarioAdmin.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Usuarios\UsuarioAdmin.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Usuarios\UsuarioNormal.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Mejia\Documents\POO\RETOS\Practicas-POO\Netflix\target\scala-2.13\classes\Usuarios\UsuarioNormal.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
