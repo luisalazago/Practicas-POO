@@ -35,5 +35,5 @@ class EdificoOrquideaNegra {
     def horarioReserva1_= (nuevoHorario : Int) = _horarioReserva1 = nuevoHorario
     def horarioReserva2_= (nuevoHorario : Int) = _horarioReserva2 = nuevoHorario
 
-    // Métodos
+    // Métodos.
 }
