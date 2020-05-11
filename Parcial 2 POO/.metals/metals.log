@@ -679,3 +679,7 @@ java.lang.NullPointerException
 2020.05.11 11:15:09 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Salon\Salon.scala
 2020.05.11 11:15:12 WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 2020.05.11 11:15:13 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Salon\Salon.scala
+2020.05.11 11:21:50 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:21:54 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:22:33 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 13:01:40 INFO  shutting down Metals

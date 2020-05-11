@@ -34,7 +34,7 @@ class Interfaz {
     def reservarSala() : Unit = {
         println("Bienvenido a su reserva de sala!")
         println("Salas disposnibles: ")
-        edificio.salas.foreach(n => println(n.ID))
+        edificio._salas.foreach(n => println(n.ID))
         println("Qué sala desea reservar?")
         var opcion : String = Std.readline()
         var opcion2 = opcion.asInstanceOf[Int]
@@ -62,20 +62,20 @@ class Interfaz {
     def imprmirHorario() : Unit = {
         println("Bienvenido a la visualización de los horarios!")
         println("Salas disposnibles: ")
-        edificio.salas.foreach(n => println(n.ID))
+        edificio._salas.foreach(n => println(n._ID))
         println("Qué horario de qué sala desea ver? (Ingrese la sala):")
         var opcion : String = Std.readline()
         var opcion2 = opcion.asInstanceOf[Int]
 
-        var reser :Int = edificio.salas(opcion2).reservas.length
+        var reser : Int = edificio._salas(opcion2)._reservas.length
         reser match {
             case 0 => println("No hay reservas aún D:")
             case _ => {
                 println("El horario de la sala " + opcion + " es el siguiente: ")
-                edificio.salas(opcion2).reservas.foreach(n => {
-                    println("Hora Inicial: " + n.horario1)
-                    println("Hora Finalización: " + n.horario2)
-                    println("Materia: " + n.materia)
+                edificio._salas(opcion2)._reservas.foreach(n => {
+                    println("Hora Inicial: " + n._horario1)
+                    println("Hora Finalización: " + n._horario2)
+                    println("Materia: " + n._materia)
                     println("====================================")
                 })
             }
@@ -91,7 +91,7 @@ class Interfaz {
     }
 
     def logearAdmin() : Unit = {
-        if(!edificio.esAdmin) {
+        if(!edificio._esAdmin) {
             println("Ingrese su cuenta:")
             var cuenta : String = Std.readline()
             println("Ingrese su contraseña:")
@@ -100,7 +100,7 @@ class Interfaz {
             edificio.logeoAdmin(cuenta, contra)
         }
 
-        if(edificio.esAdmin) {
+        if(edificio._esAdmin) {
             var opcion : Boolean = true
             while(opcion) {
                 println("Bienvenido al menú de opciones administrativas! :o")
@@ -161,8 +161,8 @@ class Interfaz {
         var hora : String = Std.readline()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico.tiempoOnLuz = edificio.modTimeOnLuz(hora1)
-        println("Hora cambiada: " + edificio.tiempoOnLuz)
+        edifico._tiempoOnLuz = edificio.modTimeOnLuz(hora1)
+        println("Hora cambiada: " + edificio._tiempoOnLuz)
         
         println("Volver al menú de opciones? (Y/N)")
         opcion = Std.readline()
@@ -178,8 +178,8 @@ class Interfaz {
         var hora : String = Std.readline()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico.tiempoOffLuz = edificio.modTimeOffLuz(hora1)
-        println("Hora cambiada: " + edificio.tiempoOffLuz)
+        edifico._tiempoOffLuz = edificio.modTimeOffLuz(hora1)
+        println("Hora cambiada: " + edificio._tiempoOffLuz)
         
         println("Volver al menú de opciones? (Y/N)")
         opcion = Std.readline()
@@ -195,8 +195,8 @@ class Interfaz {
         var hora : String = Std.readline()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico.tiempoOpenSalon = edificio.modTimeOpenSalon(hora1)
-        println("Hora cambiada: " + edificio.tiempoOpenSalon)
+        edifico._tiempoOpenSalon = edificio.modTimeOpenSalon(hora1)
+        println("Hora cambiada: " + edificio._tiempoOpenSalon)
         
         println("Volver al menú de opciones? (Y/N)")
         opcion = Std.readline()
@@ -212,8 +212,8 @@ class Interfaz {
         var hora : String = Std.readline()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico.tiempoOnTemperatura = edificio.modTimeOnTemeperatura(hora1)
-        println("Hora cambiada: " + edificio.tiempoOnTemperatura)
+        edifico._tiempoOnTemperatura = edificio.modTimeOnTemeperatura(hora1)
+        println("Hora cambiada: " + edificio._tiempoOnTemperatura)
         
         println("Volver al menú de opciones? (Y/N)")
         opcion = Std.readline()
@@ -229,8 +229,8 @@ class Interfaz {
         var hora : String = Std.readline()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico.tiempoOffTemperatura = edificio.modTimeOffTemperatura(hora1)
-        println("Hora cambiada: " + edificio.tiempoOffTemperatura)
+        edifico._tiempoOffTemperatura = edificio.modTimeOffTemperatura(hora1)
+        println("Hora cambiada: " + edificio._tiempoOffTemperatura)
         
         println("Volver al menú de opciones? (Y/N)")
         opcion = Std.readline()
@@ -246,8 +246,8 @@ class Interfaz {
         var hora : String = Std.readline()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico.horarioReserva1 = edificio.modHorarioReserva1(hora1)
-        println("Hora cambiada: " + edificio.horarioReserva1)
+        edifico._horarioReserva1 = edificio.modHorarioReserva1(hora1)
+        println("Hora cambiada: " + edificio._horarioReserva1)
         
         println("Volver al menú de opciones? (Y/N)")
         opcion = Std.readline()
@@ -263,8 +263,8 @@ class Interfaz {
         var hora : String = Std.readline()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico.horarioReserva2 = edificio.modHorarioReserva2(hora1)
-        println("Hora cambiada: " + edificio.horarioReserva2)
+        edifico._horarioReserva2 = edificio.modHorarioReserva2(hora1)
+        println("Hora cambiada: " + edificio._horarioReserva2)
         
         println("Volver al menú de opciones? (Y/N)")
         opcion = Std.readline()
@@ -277,11 +277,11 @@ class Interfaz {
 
     def habilitar() : Unit = {
         println("Qué salón desea habilitar el mantenimiento?:")
-        edificio.salas.foreach(n => println(n.ID))
+        edificio._salas.foreach(n => println(n.ID))
         var opcion : String = Std.readline()
         var opcion2 = opcion.asInstanceOf[Int]
 
-        edificio.salas(opcion2).estadoMantenimiento = edificio.habilitarSalon(true)
+        edificio._salas(opcion2)._estadoMantenimiento = edificio.habilitarSalon(true)
         println("Salón " + opcion2 + " en mantenimiento")
 
         println("Volver al menú de opciones? (Y/N)")
@@ -295,11 +295,11 @@ class Interfaz {
 
     def deshabilitar() : Unit = {
         println("Qué salón desea habilitar el mantenimiento?:")
-        edificio.salas.foreach(n => println(n.ID))
+        edificio._salas.foreach(n => println(n._ID))
         var opcion : String = Std.readline()
         var opcion2 = opcion.asInstanceOf[Int]
 
-        edificio.salas(opcion2).estadoMantenimiento = edificio.deshabilitarSalon(false)
+        edificio._salas(opcion2)._estadoMantenimiento = edificio.deshabilitarSalon(false)
         println("Salón " + opcion2 + " en mantenimiento")
 
         println("Volver al menú de opciones? (Y/N)")
@@ -319,7 +319,7 @@ class Interfaz {
             case "Y" => edificio.encenderLuz(0, true)
             case "N" => {
                 println("Qué salón desea prenderle la luz?")
-                edificio.salas.foreach(n => println(n.ID))
+                edificio._salas.foreach(n => println(n.ID))
                 var opcion2 : String = Std.readline()
                 var opcion3 = opcion2.asInstanceOf[Int]
                 edificio.encenderLuz(opcion3, false)
@@ -343,7 +343,7 @@ class Interfaz {
             case "Y" => edificio.apagarLuz(0, true)
             case "N" => {
                 println("Qué salón desea apagarle la luz?")
-                edificio.salas.foreach(n => println(n.ID))
+                edificio._salas.foreach(n => println(n.ID))
                 var opcion2 : String = Std.readline()
                 var opcion3 = opcion2.asInstanceOf[Int]
                 edificio.apagarLuz(opcion3, false)
@@ -367,7 +367,7 @@ class Interfaz {
             case "Y" => edificio.encenderTemperatura(0, true)
             case "N" => {
                 println("Qué salón desea prenderle la temperatura?")
-                edificio.salas.foreach(n => println(n.ID))
+                edificio._salas.foreach(n => println(n.ID))
                 var opcion2 : String = Std.readline()
                 var opcion3 = opcion2.asInstanceOf[Int]
                 edificio.encenderTemperatura(opcion3, false)
@@ -391,7 +391,7 @@ class Interfaz {
             case "Y" => edificio.apagarTemperatura(0, true)
             case "N" => {
                 println("Qué salón desea apagarle la temperatura?")
-                edificio.salas.foreach(n => println(n.ID))
+                edificio._salas.foreach(n => println(n.ID))
                 var opcion2 : String = Std.readline()
                 var opcion3 = opcion2.asInstanceOf[Int]
                 edificio.apagarTemperatura(opcion3, false)
