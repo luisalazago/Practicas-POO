@@ -77,7 +77,7 @@ class Interfaz {
                     println("Hora Finalización: " + n.horario2)
                     println("Materia: " + n.materia)
                     println("====================================")
-                }
+                })
             }
         }
 

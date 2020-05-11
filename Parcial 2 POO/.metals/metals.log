@@ -613,3 +613,69 @@ ADVERTENCIA: null
 may 11, 2020 11:02:53 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 ADVERTENCIA: Unmatched cancel notification for request id 5483
 2020.05.11 11:03:53 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:08:44 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:09:36 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:09:49 WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.05.11 11:10:29 WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+may 11, 2020 11:10:32 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFORMACIÓN: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+may 11, 2020 11:10:32 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:233)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:24)
+
+2020.05.11 11:10:32 WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+may 11, 2020 11:10:32 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFORMACIÓN: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+may 11, 2020 11:10:32 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:233)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:24)
+
+may 11, 2020 11:10:32 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFORMACIÓN: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+may 11, 2020 11:10:33 AM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:88)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:22)
+
+2020.05.11 11:10:42 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:10:56 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:11:30 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:11:37 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:11:55 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:12:15 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:12:48 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:13:13 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:13:17 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:13:25 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:13:35 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:13:54 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.11 11:15:04 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Salon\Salon.scala
+2020.05.11 11:15:09 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Salon\Salon.scala
+2020.05.11 11:15:12 WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.05.11 11:15:13 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Salon\Salon.scala
