@@ -1,6 +1,6 @@
 package Servicios
 
-object ServiciosAdmin {
+trait ServiciosAdmin {
     // Métodos
     def modTimeOnLuz() : Unit
     def modTimeOffLuz() : Unit

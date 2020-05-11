@@ -1,6 +1,6 @@
 package Servicios
 
-object ServiciosSala {
+trait ServiciosSala {
     // Métodos
     def escenderLuz() : Unit
     def apagarLuz() : Unit
