@@ -22,9 +22,7 @@ object Interfaz extends App {
             println("2. Mostrar Horario de reservas.")
             println("3. Entrar cómo administrador")
             println("4. Salir del sistema :(")
-            var opcion : Int = 0
-            opcion.nextLine()
-            opcion = StdIn.readInt()
+            var opcion : Int = StdIn.readInt()
 
             opcion match {
                 case 1 => reservarSala()
