@@ -787,3 +787,6 @@ ADVERTENCIA: Unmatched cancel notification for request id 3859
 2020.05.11 23:56:26 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
 2020.05.11 23:56:44 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
 2020.05.11 23:59:15 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Servicios\HoraActual.scala
+may 12, 2020 12:09:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTraceNotification
+2020.05.12 00:10:27 INFO  shutting down Metals

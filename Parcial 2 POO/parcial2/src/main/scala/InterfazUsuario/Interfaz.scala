@@ -22,7 +22,9 @@ object Interfaz extends App {
             println("2. Mostrar Horario de reservas.")
             println("3. Entrar cómo administrador")
             println("4. Salir del sistema :(")
-            var opcion : Int = StdIn.readInt()
+            var opcion : Int = 0
+            opcion.nextLine()
+            opcion = StdIn.readInt()
 
             opcion match {
                 case 1 => reservarSala()
@@ -34,6 +36,7 @@ object Interfaz extends App {
     }
 
     def reservarSala() : Unit = {
+        println("=================================")
         println("Bienvenido a su reserva de sala!")
         println("Salas disposnibles: ")
         edificio._salas.foreach(n => println(n._ID))
@@ -71,6 +74,7 @@ object Interfaz extends App {
     }
 
     def imprmirHorario() : Unit = {
+        println("=================================")
         println("Bienvenido a la visualización de los horarios!")
         println("Salas disposnibles: ")
         edificio._salas.foreach(n => println(n._ID))
@@ -93,6 +97,7 @@ object Interfaz extends App {
             case _ => {
                 println("El horario de la sala " + opcion2 + " es el siguiente: ")
                 edificio._salas(opcion2)._reservas.foreach(n => {
+                    println("====================================")
                     println("Hora Inicial: " + n._horario1)
                     println("Hora Finalización: " + n._horario2)
                     println("Materia: " + n._materiaActual)
