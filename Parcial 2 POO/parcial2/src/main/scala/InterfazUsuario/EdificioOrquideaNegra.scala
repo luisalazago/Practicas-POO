@@ -3,7 +3,7 @@ package InterfazUsuario
 import Servicios._
 import Reserva._
 import Salon._
-import UsuarioAdmon._
+import UsuarioAdmin._
 
 class EdificioOrquideaNegra extends ServiciosSala with UsuarioAdmin {
     // Atributos
