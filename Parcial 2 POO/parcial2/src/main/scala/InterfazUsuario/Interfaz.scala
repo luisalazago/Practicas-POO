@@ -5,6 +5,7 @@ import Reserva._
 import Salon._
 import Servicios._
 import UsuarioAdmin._
+import scala.util._
 
 object Interfaz extends App {
     var paseEdificio : Boolean = true
@@ -13,6 +14,7 @@ object Interfaz extends App {
 
     def main2(): Unit = {
         while(paseEdificio) {
+            println("=================================================================")
             println("Bienvenido al edificio Orquídea Negra de la Universidad Javeriana!")
             println("A continuación verá un menú de opciones a realizar para cada salón o en su caso si es Admin.")
             println("=================================================================")
@@ -20,13 +22,13 @@ object Interfaz extends App {
             println("2. Mostrar Horario de reservas.")
             println("3. Entrar cómo administrador")
             println("4. Salir del sistema :(")
-            var opcion : String = StdIn.readLine()
+            var opcion : Int = StdIn.readInt()
 
             opcion match {
-                case "1" => reservarSala()
-                case "2" => imprmirHorario()
-                case "3" => logearAdmin()
-                case "4" => paseEdificio = false
+                case 1 => reservarSala()
+                case 2 => imprmirHorario()
+                case 3 => logearAdmin()
+                case 4 => paseEdificio = false
             }
         }
     }
@@ -36,22 +38,31 @@ object Interfaz extends App {
         println("Salas disposnibles: ")
         edificio._salas.foreach(n => println(n._ID))
         println("Qué sala desea reservar?")
-        var opcion : String = StdIn.readLine()
-        var opcion2 = opcion.asInstanceOf[Int]
+        var opcion2 : Int = StdIn.readInt()
+        var revision : Option[Salon] = edificio._salas.filter(n => n._ID == opcion2 + "").headOption
 
-        println("Digite la hora de partida de la reserva:")
-        var n : String = StdIn.readLine()
-        var hora1 = n.asInstanceOf[Int]
-        println("Ingrese la hora de finalización de la sala:")
-        n = StdIn.readLine()
-        var hora2 = n.asInstanceOf[Int]
+        revision match {
+            case Some(s) => println("=================================")
+            case None =>  {
+                println("Sala no encontrada.")
+                println("=============================")
+                reservarSala()
+            }
+        }
+
+        println("Digite la hora de partida de la reserva (formato 24 horas):")
+        var n : Int = StdIn.readInt()
+        var hora1 = n
+        println("Ingrese la hora de finalización de la sala (formato 24 horas):")
+        n = StdIn.readInt()
+        var hora2 = n
         println("Ingrese la materia en la que se va a encontrar en la sala:")
-        n = StdIn.readLine()
-        edificio.reservar(hora1, hora2, n, opcion2)
+        var m : String = StdIn.readLine()
+        edificio.reservar(hora1, hora2, m, opcion2)
 
         println("=================================")
         println("Volver al menú de opciones? (Y/N)")
-        opcion = StdIn.readLine()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
             case "Y" => main2()
@@ -64,14 +75,23 @@ object Interfaz extends App {
         println("Salas disposnibles: ")
         edificio._salas.foreach(n => println(n._ID))
         println("Qué horario de qué sala desea ver? (Ingrese la sala):")
-        var opcion : String = StdIn.readInt()
-        var opcion2 = opcion.asInstanceOf[Int]
+        var opcion2 : Int = StdIn.readInt()
+        var revision : Option[Salon] = edificio._salas.filter(n => n._ID == opcion2 + "").headOption
+
+        revision match {
+            case Some(s) => println("=================================")
+            case None =>  {
+                println("Sala no encontrada.")
+                println("=============================")
+                imprmirHorario()
+            }
+        }
 
         var reser : Int = edificio._salas(opcion2)._reservas.length
         reser match {
             case 0 => println("No hay reservas aún D:")
             case _ => {
-                println("El horario de la sala " + opcion + " es el siguiente: ")
+                println("El horario de la sala " + opcion2 + " es el siguiente: ")
                 edificio._salas(opcion2)._reservas.foreach(n => {
                     println("Hora Inicial: " + n._horario1)
                     println("Hora Finalización: " + n._horario2)
@@ -82,7 +102,7 @@ object Interfaz extends App {
         }
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion = StdIn.readLine()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
             case "Y" => main2()
@@ -92,6 +112,7 @@ object Interfaz extends App {
 
     def logearAdmin() : Unit = {
         if(!edificio._esAdmin) {
+            println("==================================")
             println("Ingrese su cuenta:")
             var cuenta : String = StdIn.readLine()
             println("Ingrese su contraseña:")
@@ -103,6 +124,7 @@ object Interfaz extends App {
         if(edificio._esAdmin) {
             var opcion : Boolean = true
             while(opcion) {
+                println("==================================================")
                 println("Bienvenido al menú de opciones administrativas! :o")
                 println("Opciones disponibles: ")
                 println("==================================================")
@@ -120,9 +142,9 @@ object Interfaz extends App {
                 println("12. Encender tempertura.")
                 println("13. Apagar temperatura")
                 println("14. Abrir puerta(s)")
-                println("15. Salir de la sesión")
-                var opcion1 : String = StdIn.readLine()
-                var opcion2 = opcion.asInstanceOf[Int]
+                println("15. Añadir una sala")
+                println("16. Salir de la sesión")
+                var opcion2 = StdIn.readInt()
 
                 opcion2 match {
                     case 1 => onLuz()
@@ -139,10 +161,12 @@ object Interfaz extends App {
                     case 12 => encenderTemp()
                     case 13 => apagarTemp()
                     case 14 => puerta()
-                    case 15 => opcion = false
+                    case 15 => anadir()
+                    case 16 => opcion = false
                 }
             }
             println("Vuelva pronto ;)")
+            edificio._esAdmin = false
         }
         else {
             println("Error al ingresar los datos")
@@ -159,9 +183,8 @@ object Interfaz extends App {
     }
 
     def onLuz() : Unit = {
-        println("Hora a cambiar:")
-        var hora : String = StdIn.readLine()
-        var hora1 = hora.asInstanceOf[Int]
+        println("Tiempo a cambiar:")
+        var hora1 = StdIn.readInt()
 
         edificio._tiempoOnLuz = edificio.modTimeOnLuz(hora1)
         println("Hora cambiada: " + edificio._tiempoOnLuz)
@@ -177,8 +200,7 @@ object Interfaz extends App {
 
     def offLuz() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = StdIn.readLine()
-        var hora1 = hora.asInstanceOf[Int]
+        var hora1 = StdIn.readInt()
 
         edificio._tiempoOffLuz = edificio.modTimeOffLuz(hora1)
         println("Hora cambiada: " + edificio._tiempoOffLuz)
@@ -194,8 +216,7 @@ object Interfaz extends App {
 
     def openSalon() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = StdIn.readLine()
-        var hora1 = hora.asInstanceOf[Int]
+        var hora1 = StdIn.readInt()
 
         edificio._tiempoOpenSalon = edificio.modTimeOpenSalon(hora1)
         println("Hora cambiada: " + edificio._tiempoOpenSalon)
@@ -211,8 +232,7 @@ object Interfaz extends App {
 
     def onTemperatura() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = StdIn.readLine()
-        var hora1 = hora.asInstanceOf[Int]
+        var hora1 = StdIn.readInt()
 
         edificio._tiempoOnTemperatura = edificio.modTimeOnTemperatura(hora1)
         println("Hora cambiada: " + edificio._tiempoOnTemperatura)
@@ -228,8 +248,7 @@ object Interfaz extends App {
 
     def offTemperatura() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = StdIn.readLine()
-        var hora1 = hora.asInstanceOf[Int]
+        var hora1 = StdIn.readInt()
 
         edificio._tiempoOffTemperatura = edificio.modTimeOffTemperatura(hora1)
         println("Hora cambiada: " + edificio._tiempoOffTemperatura)
@@ -245,8 +264,7 @@ object Interfaz extends App {
 
     def horarioReserva11() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = StdIn.readLine()
-        var hora1 = hora.asInstanceOf[Int]
+        var hora1 = StdIn.readInt()
 
         edificio._horarioReserva1 = edificio.modHorarioReserva1(hora1)
         println("Hora cambiada: " + edificio._horarioReserva1)
@@ -262,8 +280,7 @@ object Interfaz extends App {
 
     def horarioReserva22() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = StdIn.readLine()
-        var hora1 = hora.asInstanceOf[Int]
+        var hora1 = StdIn.readInt()
 
         edificio._horarioReserva2 = edificio.modHorarioReserva2(hora1)
         println("Hora cambiada: " + edificio._horarioReserva2)
@@ -280,14 +297,23 @@ object Interfaz extends App {
     def habilitar() : Unit = {
         println("Qué salón desea habilitar el mantenimiento?:")
         edificio._salas.foreach(n => println(n.ID))
-        var opcion : String = StdIn.readLine()
-        var opcion2 = opcion.asInstanceOf[Int]
+        var opcion2 : Int = StdIn.readInt()
+        var revision : Option[Salon] = edificio._salas.filter(n => n._ID == opcion2 + "").headOption
+
+        revision match {
+            case Some(s) => println("=================================")
+            case None =>  {
+                println("Sala no encontrada.")
+                println("=============================")
+                habilitar()
+            }
+        }
 
         edificio._salas(opcion2)._estadoMantenimiento = edificio.habilitarSalon(true)
         println("Salón " + opcion2 + " en mantenimiento")
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion = StdIn.readLine()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
             case "Y" => logearAdmin()
@@ -298,14 +324,24 @@ object Interfaz extends App {
     def deshabilitar() : Unit = {
         println("Qué salón desea habilitar el mantenimiento?:")
         edificio._salas.foreach(n => println(n._ID))
-        var opcion : String = StdIn.readLine()
-        var opcion2 = opcion.asInstanceOf[Int]
+        var opcion2 : Int = StdIn.readInt()
+        var revision : Option[Salon] = edificio._salas.filter(n => n._ID == opcion2 + "").headOption
+
+        revision match {
+            case Some(s) => println("=================================")
+            case None =>  {
+                println("Sala no encontrada.")
+                println("=============================")
+                deshabilitar()
+            }
+        }
+
 
         edificio._salas(opcion2)._estadoMantenimiento = edificio.deshabilitarSalon(false)
         println("Salón " + opcion2 + " en mantenimiento")
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion= StdIn.readLine()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
             case "Y" => logearAdmin()
@@ -322,8 +358,17 @@ object Interfaz extends App {
             case "N" => {
                 println("Qué salón desea prenderle la luz?")
                 edificio._salas.foreach(n => println(n.ID))
-                var opcion2 : String = StdIn.readLine()
-                var opcion3 = opcion2.asInstanceOf[Int]
+                var opcion3 : Int = StdIn.readInt()
+                var revision : Option[Salon] = edificio._salas.filter(n => n._ID == opcion3 + "").headOption
+
+                revision match {
+                    case Some(s) => println("=================================")
+                    case None =>  {
+                        println("Sala no encontrada.")
+                        println("=============================")
+                        encenderLuces()
+                    }
+                }
                 edificio.encenderLuz(opcion3, false)
             }
         }
@@ -346,8 +391,17 @@ object Interfaz extends App {
             case "N" => {
                 println("Qué salón desea apagarle la luz?")
                 edificio._salas.foreach(n => println(n.ID))
-                var opcion2 : String = StdIn.readLine()
-                var opcion3 = opcion2.asInstanceOf[Int]
+                var opcion3 : Int = StdIn.readInt()
+                var revision : Option[Salon] = edificio._salas.filter(n => n._ID == opcion3 + "").headOption
+
+                revision match {
+                    case Some(s) => println("=================================")
+                    case None =>  {
+                        println("Sala no encontrada.")
+                        println("=============================")
+                        apagarLuces()
+                    }
+                }
                 edificio.apagarLuz(opcion3, false)
             }
         }
@@ -370,8 +424,17 @@ object Interfaz extends App {
             case "N" => {
                 println("Qué salón desea prenderle la temperatura?")
                 edificio._salas.foreach(n => println(n.ID))
-                var opcion2 : String = StdIn.readLine()
-                var opcion3 = opcion2.asInstanceOf[Int]
+                var opcion3 : Int = StdIn.readInt()
+                var revision : Option[Salon] = edificio._salas.filter(n => n._ID == opcion3 + "").headOption
+
+                revision match {
+                    case Some(s) => println("=================================")
+                    case None =>  {
+                        println("Sala no encontrada.")
+                        println("=============================")
+                        encenderTemp()
+                    }
+                }
                 edificio.encenderTemperatura(opcion3, false)
             }
         }
@@ -394,8 +457,17 @@ object Interfaz extends App {
             case "N" => {
                 println("Qué salón desea apagarle la temperatura?")
                 edificio._salas.foreach(n => println(n.ID))
-                var opcion2 : String = StdIn.readLine()
-                var opcion3 = opcion2.asInstanceOf[Int]
+                var opcion3 : Int = StdIn.readInt()
+                var revision : Option[Salon] = edificio._salas.filter(n => n._ID == opcion3 + "").headOption
+
+                revision match {
+                    case Some(s) => println("=================================")
+                    case None =>  {
+                        println("Sala no encontrada.")
+                        println("=============================")
+                        apagarLuces()
+                    }
+                }
                 edificio.apagarTemperatura(opcion3, false)
             }
         }
@@ -422,10 +494,19 @@ object Interfaz extends App {
                 case "N" => {
                     println("Qué salón desea abrir?: ")
                     edificio._salas.foreach(n => println(n._ID))
-                    var salon : String = StdIn.readLine()
-                    var indice = salon.asInstanceOf[Int]
+                    var indice : Int = StdIn.readInt()
+                    var revision : Option[Salon] = edificio._salas.filter(n => n._ID == indice + "").headOption
+
+                    revision match {
+                        case Some(s) => println("=================================")
+                        case None =>  {
+                            println("Sala no encontrada.")
+                            println("=============================")
+                            puerta()
+                        }
+                    }
                     edificio.accionPuerta(false, indice, true)
-                    println("Puerta del salón " + salon + " abierta!")
+                    println("Puerta del salón " + indice + " abierta!")
                 }
             }
         }
@@ -440,11 +521,46 @@ object Interfaz extends App {
                 case "N" => {
                     println("Qué salón desea cerrar?: ")
                     edificio._salas.foreach(n => println(n._ID))
-                    var salon : String = StdIn.readLine()
-                    var indice = salon.asInstanceOf[Int]
+                    var indice : Int = StdIn.readInt()
+                    var revision : Option[Salon] = edificio._salas.filter(n => n._ID == indice + "").headOption
+
+                    revision match {
+                        case Some(s) => println("=================================")
+                        case None =>  {
+                            println("Sala no encontrada.")
+                            println("=============================")
+                            puerta()
+                        }
+                    }
                     edificio.accionPuerta(false, indice, false)
-                    println("Puerta del salón " + salon + " cerrada!")
+                    println("Puerta del salón " + indice + " cerrada!")
                 }
+            }
+        }
+
+        println("Volver al menú de opciones? (Y/N)")
+        opcion = StdIn.readLine()
+
+        opcion match {
+            case "Y" => logearAdmin()
+            case "N" => println("Qué tenga una buen día!")
+        }
+    }
+    def anadir() : Unit = {
+        println("Qué código entre 0 y 50 desea colocarle a la sala:")
+        var opcion : String = StdIn.readLine()
+        var revision : Option[Salon] = edificio._salas.filter(n => n._ID == opcion).headOption
+        revision match {
+            case Some(s) => {
+                println("Lo sentimos ya existe una sala con ese código.")
+                println("Salas existentes:")
+                edificio._salas.foreach(n => println("*" + n._ID))
+                anadir()
+            }
+            case None => {
+                var salaN : Salon = new Salon(opcion)
+                edificio._salas = salaN :: edificio._salas
+                println("Sala " + opcion + " fue creada exitosamente!")
             }
         }
 

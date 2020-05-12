@@ -7,7 +7,7 @@ import UsuarioAdmin._
 
 class EdificioOrquideaNegra extends ServiciosAdmin with ServiciosSala {
     // Atributos
-    var _salas : List[Salon] = List(new Salon("1"))
+    var _salas : List[Salon] = List(new Salon("0"))
     var _admins : List[UsuarioAdmin] = List(new UsuarioAdmin("Luis", "123"))
     var _tiempoOnLuz : Int = 5
     var _tiempoOffLuz : Int = 10
@@ -104,11 +104,11 @@ class EdificioOrquideaNegra extends ServiciosAdmin with ServiciosSala {
     }
     def reservar(hora1 : Int, hora2 : Int, materia : String, indice : Int) : Unit = {
         var reserva : Reserva = new Reserva(hora1, hora2, materia)
-        var reservaU : Option[Reserva] = _salas(indice)._reservas.filter(n => n == reserva).headOption
+        var reservaU : Option[Reserva] = _salas(indice)._reservas.filter(n => n._horario1 == reserva._horario1).headOption
         reservaU match {
             case Some(s) => println("Lo siento esta reserva ya está hecha.")
             case None => {
-                if(_tiempoActualHora >= _horarioReserva1 && _tiempoActualHora <= _horarioReserva2) {
+                if(_tiempoActualHora >= _horarioReserva1 && _tiempoActualHora <= _horarioReserva2 && hora1 >= _horarioReserva1 && hora2 <= _horarioReserva2) {
                     _salas(indice)._reservas = reserva :: _salas(indice)._reservas
                     println("Sala reservada exitosamente :)")
                 }
