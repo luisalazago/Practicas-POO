@@ -119,7 +119,8 @@ object Interfaz extends App {
                 println("11. Apagar las luces")
                 println("12. Encender tempertura.")
                 println("13. Apagar temperatura")
-                println("14. Salir de la sesión")
+                println("14. Abrir puerta(s)")
+                println("15. Salir de la sesión")
                 var opcion1 : String = StdIn.readLine()
                 var opcion2 = opcion.asInstanceOf[Int]
 
@@ -137,7 +138,8 @@ object Interfaz extends App {
                     case 11 => apagarLuces()
                     case 12 => encenderTemp()
                     case 13 => apagarTemp()
-                    case 14 => opcion = false
+                    case 14 => puerta()
+                    case 15 => opcion = false
                 }
             }
             println("Vuelva pronto ;)")
@@ -400,6 +402,54 @@ object Interfaz extends App {
 
         println("Volver al menú de opciones? (Y/N)")
         var opcion : String = StdIn.readLine()
+
+        opcion match {
+            case "Y" => logearAdmin()
+            case "N" => println("Qué tenga una buen día!")
+        }
+    }
+    def puerta() : Unit = {
+        println("Desea abrir o cerrar puertas (Y para abrir/N para cerrar): ")
+        var opcion : String = StdIn.readLine()
+        if(opcion == "Y") {
+            println("Desea abrir todas las puertas de los salones? (Y/N):")
+            opcion = StdIn.readLine()
+            opcion match {
+                case "Y" => {
+                    edificio.accionPuerta(true, 0, true)
+                    println("Puertas abiertas!")
+                }
+                case "N" => {
+                    println("Qué salón desea abrir?: ")
+                    edificio._salas.foreach(n => println(n._ID))
+                    var salon : String = StdIn.readLine()
+                    var indice = salon.asInstanceOf[Int]
+                    edificio.accionPuerta(false, indice, true)
+                    println("Puerta del salón " + salon + " abierta!")
+                }
+            }
+        }
+        else {
+            println("Desea cerrar todas las puertas de los salones? (Y/N):")
+            opcion = StdIn.readLine()
+            opcion match {
+                case "Y" => {
+                    edificio.accionPuerta(true, 0, false)
+                    println("Puertas cerradas!")
+                }
+                case "N" => {
+                    println("Qué salón desea cerrar?: ")
+                    edificio._salas.foreach(n => println(n._ID))
+                    var salon : String = StdIn.readLine()
+                    var indice = salon.asInstanceOf[Int]
+                    edificio.accionPuerta(false, indice, false)
+                    println("Puerta del salón " + salon + " cerrada!")
+                }
+            }
+        }
+
+        println("Volver al menú de opciones? (Y/N)")
+        opcion = StdIn.readLine()
 
         opcion match {
             case "Y" => logearAdmin()

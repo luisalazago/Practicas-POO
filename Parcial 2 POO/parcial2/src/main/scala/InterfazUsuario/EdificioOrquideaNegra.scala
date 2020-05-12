@@ -118,6 +118,32 @@ class EdificioOrquideaNegra extends ServiciosAdmin with ServiciosSala {
             } 
         }
     }
+    def accionPuerta(todos : Boolean, indice : Int, accion: Boolean): Unit = {
+        if(todos) {
+            accion match {
+                case true => _salas.foreach(n => {
+                    n._puerta = true
+                    n._estadoOcupado = false
+                })
+                case false => _salas.foreach(n => {
+                    n._puerta = false
+                    n._estadoOcupado = true
+                })
+            }
+        }
+        else {
+            accion match {
+                case true => {
+                    _salas(indice)._puerta = true
+                    _salas(indice)._estadoOcupado = false
+                } 
+                case false => {
+                    _salas(indice)._puerta = false
+                    _salas(indice)._estadoOcupado = true
+                }
+            }
+        }
+    }
     def logeoAdmin(cuenta : String, contrasena : String) : Unit = {
         for(admin <- _admins) {
             if(admin.cuenta == cuenta && admin.contrasena == contrasena) {
