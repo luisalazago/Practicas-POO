@@ -2,13 +2,13 @@ package Servicios
 
 trait ServiciosAdmin {
     // Métodos
-    def modTimeOnLuz() : Unit
-    def modTimeOffLuz() : Unit
-    def modTimeOpenSalon() : Unit
-    def modTimeOnTemperatura() : Unit
-    def modTimeOffTemperatura() : Unit
-    def modHorarioReserva1() : Unit
-    def modHorarioReserva2() : Unit
-    def habilitarSalon() : Unit
-    def deshabilitarSalon() : Unit
+    def modTimeOnLuz(tiempo : Int) :  Int
+    def modTimeOffLuz(tiempo : Int) : Int
+    def modTimeOpenSalon(tiempo : Int) : Int
+    def modTimeOnTemperatura(tiempo : Int) : Int
+    def modTimeOffTemperatura(tiempo : Int) : Int
+    def modHorarioReserva1(tiempo : Int) : Int
+    def modHorarioReserva2(tiempo : Int) : Int
+    def habilitarSalon(decision : Boolean) : Boolean
+    def deshabilitarSalon(decision : Boolean) : Boolean
 }

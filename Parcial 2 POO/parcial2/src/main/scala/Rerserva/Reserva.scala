@@ -1,10 +1,10 @@
 package Reserva
 
-class Reserva {
+class Reserva(hora1 : Int, hora2 : Int, materia : String) {
     // Atributos
-    var _horario1 : Int = _
-    var _horario2 : Int = _
-    var _materiaActual : String = _ 
+    var _horario1 : Int = hora1
+    var _horario2 : Int = hora2
+    var _materiaActual : String = materia 
 
     // Getters
     def horario1 = _horario1

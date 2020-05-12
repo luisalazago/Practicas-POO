@@ -2,11 +2,11 @@ package Salon
 
 import Reserva._
 
-class Salon extends Reserva {
+class Salon {
     // Atributos
     var _estadoLuz : Boolean = false
     var _reservas : List[Reserva] = List()
-    var _temperatura : Int = 23
+    var _temperatura : Double = 23
     var _ID : String = _ 
     var _estadoOcupado : Boolean = false
     var _puerta : Boolean = false

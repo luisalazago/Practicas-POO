@@ -20,9 +20,10 @@ class Interfaz {
             println("2. Mostrar Horario de reservas.")
             println("3. Entrar cómo administrador")
             println("4. Salir del sistema :(")
-            var opcion : String = Std.readline()
+            var opcion : String = StdIn.readLine()
+            var opcion2 = asInstanceOf[Int]
 
-            opcion match {
+            opcion2 match {
                 case 1 => reservarSala()
                 case 2 => imprmirHorario()
                 case 3 => logearAdmin()
@@ -36,22 +37,22 @@ class Interfaz {
         println("Salas disposnibles: ")
         edificio._salas.foreach(n => println(n.ID))
         println("Qué sala desea reservar?")
-        var opcion : String = Std.readline()
+        var opcion : String = StdIn.readLine()
         var opcion2 = opcion.asInstanceOf[Int]
 
         println("Digite la hora de partida de la reserva:")
-        var n : String = Std.readline()
+        var n : String = StdIn.readLine()
         var hora1 = n.asInstanceOf[Int]
         println("Ingrese la hora de finalización de la sala:")
-        n = Std.readline()
+        n = StdIn.readLine()
         var hora2 = n.asInstanceOf[Int]
         println("Ingrese la materia en la que se va a encontrar en la sala:")
-        n = Std.readline()
+        n = StdIn.readLine()
         edificio.reservar(hora1, hora2, n, opcion2)
 
         println("=================================")
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        opcion = StdIn.readLine()
 
         opcion match {
             case "Y" => main()
@@ -64,7 +65,7 @@ class Interfaz {
         println("Salas disposnibles: ")
         edificio._salas.foreach(n => println(n._ID))
         println("Qué horario de qué sala desea ver? (Ingrese la sala):")
-        var opcion : String = Std.readline()
+        var opcion : String = StdIn.readLine()
         var opcion2 = opcion.asInstanceOf[Int]
 
         var reser : Int = edificio._salas(opcion2)._reservas.length
@@ -75,14 +76,14 @@ class Interfaz {
                 edificio._salas(opcion2)._reservas.foreach(n => {
                     println("Hora Inicial: " + n._horario1)
                     println("Hora Finalización: " + n._horario2)
-                    println("Materia: " + n._materia)
+                    println("Materia: " + n._materiaActual)
                     println("====================================")
                 })
             }
         }
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        opcion = StdIn.readLine()
 
         opcion match {
             case "Y" => main()
@@ -93,9 +94,9 @@ class Interfaz {
     def logearAdmin() : Unit = {
         if(!edificio._esAdmin) {
             println("Ingrese su cuenta:")
-            var cuenta : String = Std.readline()
+            var cuenta : String = StdIn.readLine()
             println("Ingrese su contraseña:")
-            var contra : String = Std.readline()
+            var contra : String = StdIn.readLine()
 
             edificio.logeoAdmin(cuenta, contra)
         }
@@ -120,7 +121,7 @@ class Interfaz {
                 println("12. Encender tempertura.")
                 println("13. Apagar temperatura")
                 println("14. Salir de la sesión")
-                var opcion1 : String = Std.readline()
+                var opcion1 : String = StdIn.readLine()
                 var opcion2 = opcion.asInstanceOf[Int]
 
                 opcion2 match {
@@ -148,9 +149,9 @@ class Interfaz {
         }
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion0 : String = StdIn.readLine()
 
-        opcion match {
+        opcion0 match {
             case "Y" => main()
             case "N" => println("Qué tenga una buen día!")
         }
@@ -158,119 +159,119 @@ class Interfaz {
 
     def onLuz() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = Std.readline()
+        var hora : String = StdIn.readLine()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico._tiempoOnLuz = edificio.modTimeOnLuz(hora1)
+        edificio._tiempoOnLuz = edificio.modTimeOnLuz(hora1)
         println("Hora cambiada: " + edificio._tiempoOnLuz)
         
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
 
     def offLuz() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = Std.readline()
+        var hora : String = StdIn.readLine()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico._tiempoOffLuz = edificio.modTimeOffLuz(hora1)
+        edificio._tiempoOffLuz = edificio.modTimeOffLuz(hora1)
         println("Hora cambiada: " + edificio._tiempoOffLuz)
         
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
 
     def openSalon() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = Std.readline()
+        var hora : String = StdIn.readLine()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico._tiempoOpenSalon = edificio.modTimeOpenSalon(hora1)
+        edificio._tiempoOpenSalon = edificio.modTimeOpenSalon(hora1)
         println("Hora cambiada: " + edificio._tiempoOpenSalon)
         
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
 
     def onTemperatura() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = Std.readline()
+        var hora : String = StdIn.readLine()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico._tiempoOnTemperatura = edificio.modTimeOnTemeperatura(hora1)
+        edificio._tiempoOnTemperatura = edificio.modTimeOnTemperatura(hora1)
         println("Hora cambiada: " + edificio._tiempoOnTemperatura)
         
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
 
     def offTemperatura() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = Std.readline()
+        var hora : String = StdIn.readLine()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico._tiempoOffTemperatura = edificio.modTimeOffTemperatura(hora1)
+        edificio._tiempoOffTemperatura = edificio.modTimeOffTemperatura(hora1)
         println("Hora cambiada: " + edificio._tiempoOffTemperatura)
         
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
 
     def horarioReserva11() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = Std.readline()
+        var hora : String = StdIn.readLine()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico._horarioReserva1 = edificio.modHorarioReserva1(hora1)
+        edificio._horarioReserva1 = edificio.modHorarioReserva1(hora1)
         println("Hora cambiada: " + edificio._horarioReserva1)
         
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
 
     def horarioReserva22() : Unit = {
         println("Hora a cambiar:")
-        var hora : String = Std.readline()
+        var hora : String = StdIn.readLine()
         var hora1 = hora.asInstanceOf[Int]
 
-        edifico._horarioReserva2 = edificio.modHorarioReserva2(hora1)
+        edificio._horarioReserva2 = edificio.modHorarioReserva2(hora1)
         println("Hora cambiada: " + edificio._horarioReserva2)
         
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
@@ -278,17 +279,17 @@ class Interfaz {
     def habilitar() : Unit = {
         println("Qué salón desea habilitar el mantenimiento?:")
         edificio._salas.foreach(n => println(n.ID))
-        var opcion : String = Std.readline()
+        var opcion : String = StdIn.readLine()
         var opcion2 = opcion.asInstanceOf[Int]
 
         edificio._salas(opcion2)._estadoMantenimiento = edificio.habilitarSalon(true)
         println("Salón " + opcion2 + " en mantenimiento")
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        opcion = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
@@ -296,113 +297,113 @@ class Interfaz {
     def deshabilitar() : Unit = {
         println("Qué salón desea habilitar el mantenimiento?:")
         edificio._salas.foreach(n => println(n._ID))
-        var opcion : String = Std.readline()
+        var opcion : String = StdIn.readLine()
         var opcion2 = opcion.asInstanceOf[Int]
 
         edificio._salas(opcion2)._estadoMantenimiento = edificio.deshabilitarSalon(false)
         println("Salón " + opcion2 + " en mantenimiento")
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        opcion= StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
 
     def encenderLuces() : Unit = {
         println("Desea prender las luces de todos los salones? (Y/N)")
-        var opcion1 : String = Std.readline()
+        var opcion1 : String = StdIn.readLine()
 
         opcion1 match {
             case "Y" => edificio.encenderLuz(0, true)
             case "N" => {
                 println("Qué salón desea prenderle la luz?")
                 edificio._salas.foreach(n => println(n.ID))
-                var opcion2 : String = Std.readline()
+                var opcion2 : String = StdIn.readLine()
                 var opcion3 = opcion2.asInstanceOf[Int]
                 edificio.encenderLuz(opcion3, false)
             }
         }
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
 
     def apagarLuces() : Unit = {
         println("Desea apagar las luces de todos los salones? (Y/N)")
-        var opcion1 : String = Std.readline()
+        var opcion1 : String = StdIn.readLine()
 
         opcion1 match {
             case "Y" => edificio.apagarLuz(0, true)
             case "N" => {
                 println("Qué salón desea apagarle la luz?")
                 edificio._salas.foreach(n => println(n.ID))
-                var opcion2 : String = Std.readline()
+                var opcion2 : String = StdIn.readLine()
                 var opcion3 = opcion2.asInstanceOf[Int]
                 edificio.apagarLuz(opcion3, false)
             }
         }
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
 
     def encenderTemp() : Unit = {
         println("Desea prender la temperatura de todos los salones? (Y/N)")
-        var opcion1 : String = Std.readline()
+        var opcion1 : String = StdIn.readLine()
 
         opcion1 match {
             case "Y" => edificio.encenderTemperatura(0, true)
             case "N" => {
                 println("Qué salón desea prenderle la temperatura?")
                 edificio._salas.foreach(n => println(n.ID))
-                var opcion2 : String = Std.readline()
+                var opcion2 : String = StdIn.readLine()
                 var opcion3 = opcion2.asInstanceOf[Int]
                 edificio.encenderTemperatura(opcion3, false)
             }
         }
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }
 
     def apagarTemp() : Unit = {
         println("Desea apagar la temperatura de todos los salones? (Y/N)")
-        var opcion1 : String = Std.readline()
+        var opcion1 : String = StdIn.readLine()
 
         opcion1 match {
             case "Y" => edificio.apagarTemperatura(0, true)
             case "N" => {
                 println("Qué salón desea apagarle la temperatura?")
                 edificio._salas.foreach(n => println(n.ID))
-                var opcion2 : String = Std.readline()
+                var opcion2 : String = StdIn.readLine()
                 var opcion3 = opcion2.asInstanceOf[Int]
                 edificio.apagarTemperatura(opcion3, false)
             }
         }
 
         println("Volver al menú de opciones? (Y/N)")
-        opcion = Std.readline()
+        var opcion : String = StdIn.readLine()
 
         opcion match {
-            case "Y" => logeoAdmin()
+            case "Y" => logearAdmin()
             case "N" => println("Qué tenga una buen día!")
         }
     }

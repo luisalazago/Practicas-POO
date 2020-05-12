@@ -5,7 +5,7 @@ import Reserva._
 import Salon._
 import UsuarioAdmin._
 
-class EdificioOrquideaNegra extends ServiciosSala with UsuarioAdmin {
+class EdificioOrquideaNegra extends ServiciosAdmin {
     // Atributos
     var _salas : List[Salon] = List()
     var _admins : List[UsuarioAdmin] = List()
@@ -22,9 +22,10 @@ class EdificioOrquideaNegra extends ServiciosSala with UsuarioAdmin {
 
     // Métodos
     def encenderLuz(indice : Int, todos : Boolean) : Unit = {
+        var justo : Int = 60 - _tiempoOnLuz
         if(todos) {
-            _tiempoActual match {
-                case 60 - _tiempoOnLuz => {
+            _tiempoActualMin match {
+                case justo => {
                     for(sala <- _salas) {
                         sala._estadoLuz = true
                     }
@@ -34,16 +35,17 @@ class EdificioOrquideaNegra extends ServiciosSala with UsuarioAdmin {
         }
         else {
 
-            _tiempoActual match {
-                case (60 - _tiempoOnLuz) => _salas(indice)._estadoLuz = true
+            _tiempoActualMin match {
+                case justo => _salas(indice)._estadoLuz = true
                 case _ => println("Aún no es la hora requerida para ejecutar la acción.")
             }
         }
     }
     def apagarLuz(indice : Int, todos : Boolean) : Unit = {
+        var justo : Int = 60 - _tiempoOffLuz
         if(todos) {
-            _tiempoActual match {
-                case (60 - _tiempoOffLuz) => {
+            _tiempoActualMin match {
+                case justo => {
                     for(sala <- _salas) {
                         if(sala._estadoOcupado == false) {
                             sala._estadoLuz = false
@@ -54,37 +56,39 @@ class EdificioOrquideaNegra extends ServiciosSala with UsuarioAdmin {
             }
         }
         else {
-            _tiempoActual match {
-                case (60 - _tiempoOffLuz) => _salas(indice)._estadoLuz = false
+            _tiempoActualMin match {
+                case justo => _salas(indice)._estadoLuz = false
                 case _ => println("Aún no es la hora requerida para ejecutar la acción.")
             }
         }
     }
     def encenderTemperatura(indice : Int, todos : Boolean) : Unit = {
+        var justo : Int = 60 - _tiempoOnTemperatura
         if(todos) {
-            _tiempoActual match {
-                case (60 - _tiempoOnTemperatura) => {
+            _tiempoActualMin match {
+                case justo => {
                     for(sala <- _salas) {
-                        sala._temperatura = true
+                        sala._temperatura = 23
                     }
                 }
                 case _ => println("Aún no es la hora requerida para ejecutar la acción.") 
             }
         }
         else {
-            _tiempoActual match {
-                case (60 - _tiempoOnTemperatura) => _salas(indice)._temperatura = true
+            _tiempoActualMin match {
+                case justo => _salas(indice)._temperatura = 23
                 case _ => println("Aún no es la hora requerida para ejecutar la acción.")
             }
         }
     }
     def apagarTemperatura(indice : Int, todos : Boolean) : Unit = {
+        var justo : Int = 60 - _tiempoOffTemperatura
         if(todos) {
-            _tiempoActual match {
-                case (60 - _tiempoOffTemperatura) => {
+            _tiempoActualMin match {
+                case justo => {
                     for(sala <- _salas) {
                         if(sala._estadoOcupado == false) {
-                            sala._temperatura = false
+                            sala._temperatura = 0
                         }
                     }
                 }
@@ -92,15 +96,15 @@ class EdificioOrquideaNegra extends ServiciosSala with UsuarioAdmin {
             }
         }
         else {
-            _tiempoActual match {
-                case (60 - _tiempoOffTemperatura) => _salas(indice)._temperatura = false
+            _tiempoActualMin match {
+                case justo => _salas(indice)._temperatura = 0
                 case _ => println("Aún no es la hora requerida para ejecutar la acción.")
             }
         }
     }
     def reservar(hora1 : Int, hora2 : Int, materia : String, indice : Int) : Unit = {
         var reserva : Reserva = new Reserva(hora1, hora2, materia)
-        var reservaU : Option[Reserva] = _salas(indice)._reservas.foreach(n => n == reserva).headOption
+        var reservaU : Option[Reserva] = _salas(indice)._reservas.filter(n => n == reserva).headOption
         reservaU match {
             case Some(s) => println("Lo siento esta reserva ya está hecha.")
             case None => {
@@ -116,7 +120,7 @@ class EdificioOrquideaNegra extends ServiciosSala with UsuarioAdmin {
     }
     def logeoAdmin(cuenta : String, contrasena : String) : Unit = {
         for(admin <- _admins) {
-            if(admin._cuenta == cuenta && admin._contrasena == contrasena) {
+            if(admin.cuenta == cuenta && admin.contrasena == contrasena) {
                 _esAdmin = true
             }
         }
@@ -125,5 +129,14 @@ class EdificioOrquideaNegra extends ServiciosSala with UsuarioAdmin {
             case true => println("Logeo Exitoso!")
             case false => println("No coinciden las credenciales.")
         }
-    } 
+    }
+    def modTimeOnLuz(tiempo : Int) : Int = return tiempo
+    def modTimeOffLuz(tiempo : Int) : Int = return tiempo
+    def modTimeOpenSalon(tiempo : Int) : Int = return tiempo
+    def modTimeOnTemperatura(tiempo : Int) : Int = return tiempo
+    def modTimeOffTemperatura(tiempo : Int) : Int = return tiempo
+    def modHorarioReserva1(tiempo : Int) : Int = return tiempo
+    def modHorarioReserva2(tiempo : Int) : Int = return tiempo
+    def habilitarSalon(decision : Boolean) : Boolean = return decision
+    def deshabilitarSalon(decision : Boolean) : Boolean = return decision
 }
