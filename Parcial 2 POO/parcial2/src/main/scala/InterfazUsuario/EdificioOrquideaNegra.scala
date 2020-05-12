@@ -5,10 +5,10 @@ import Reserva._
 import Salon._
 import UsuarioAdmin._
 
-class EdificioOrquideaNegra extends ServiciosAdmin {
+class EdificioOrquideaNegra extends ServiciosAdmin with ServiciosSala {
     // Atributos
-    var _salas : List[Salon] = List()
-    var _admins : List[UsuarioAdmin] = List()
+    var _salas : List[Salon] = List(new Salon("1"))
+    var _admins : List[UsuarioAdmin] = List(new UsuarioAdmin("Luis", "123"))
     var _tiempoOnLuz : Int = 5
     var _tiempoOffLuz : Int = 10
     var _tiempoOpenSalon : Int = 15 

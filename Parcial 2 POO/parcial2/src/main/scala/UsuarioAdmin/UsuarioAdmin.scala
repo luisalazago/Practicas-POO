@@ -3,10 +3,10 @@ package UsuarioAdmin
 import Servicios._
 import InterfazUsuario._
 
-class UsuarioAdmin {
+class UsuarioAdmin(c : String, con : String) {
     // Atributos
-    private var _cuenta : String = _
-    private var _contrasena : String = _
+    private var _cuenta : String = c
+    private var _contrasena : String = con
 
     // Getters
     def cuenta = _cuenta

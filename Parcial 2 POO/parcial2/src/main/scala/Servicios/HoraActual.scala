@@ -2,7 +2,7 @@ package Servicios
 
 import java.util.Calendar
 
-object HoraActual extends App {
+object HoraActual {
     // Métodos
     def definirHoraActualMin() : Int = {
         val now = Calendar.getInstance()

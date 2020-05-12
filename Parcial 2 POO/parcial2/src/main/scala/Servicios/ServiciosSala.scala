@@ -2,9 +2,9 @@ package Servicios
 
 trait ServiciosSala {
     // Métodos
-    def escenderLuz() : Unit
-    def apagarLuz() : Unit
-    def reservar() : Unit
-    def prenderTemperatura : Unit
-    def apagarTemperatura : Unit
+    def encenderLuz(indice : Int, todos : Boolean) : Unit
+    def apagarLuz(indice : Int, todos : Boolean) : Unit
+    def encenderTemperatura(indice : Int, todos : Boolean) : Unit
+    def apagarTemperatura(indice : Int, todos : Boolean) : Unit
+    def reservar(hora1 : Int, hora2 : Int, materia : String, indice : Int) : Unit
 }

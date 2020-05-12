@@ -6,12 +6,12 @@ import Salon._
 import Servicios._
 import UsuarioAdmin._
 
-class Interfaz {
+object Interfaz extends App {
     var paseEdificio : Boolean = true
     var edificio : EdificioOrquideaNegra = new EdificioOrquideaNegra
-    main()
+    main2()
 
-    def main(): Unit = {
+    def main2(): Unit = {
         while(paseEdificio) {
             println("Bienvenido al edificio Orquídea Negra de la Universidad Javeriana!")
             println("A continuación verá un menú de opciones a realizar para cada salón o en su caso si es Admin.")
@@ -21,13 +21,12 @@ class Interfaz {
             println("3. Entrar cómo administrador")
             println("4. Salir del sistema :(")
             var opcion : String = StdIn.readLine()
-            var opcion2 = asInstanceOf[Int]
 
-            opcion2 match {
-                case 1 => reservarSala()
-                case 2 => imprmirHorario()
-                case 3 => logearAdmin()
-                case 4 => paseEdificio = false
+            opcion match {
+                case "1" => reservarSala()
+                case "2" => imprmirHorario()
+                case "3" => logearAdmin()
+                case "4" => paseEdificio = false
             }
         }
     }
@@ -35,7 +34,7 @@ class Interfaz {
     def reservarSala() : Unit = {
         println("Bienvenido a su reserva de sala!")
         println("Salas disposnibles: ")
-        edificio._salas.foreach(n => println(n.ID))
+        edificio._salas.foreach(n => println(n._ID))
         println("Qué sala desea reservar?")
         var opcion : String = StdIn.readLine()
         var opcion2 = opcion.asInstanceOf[Int]
@@ -55,7 +54,7 @@ class Interfaz {
         opcion = StdIn.readLine()
 
         opcion match {
-            case "Y" => main()
+            case "Y" => main2()
             case "N" => println("Qué tenga una buen día!")
         }
     }
@@ -65,7 +64,7 @@ class Interfaz {
         println("Salas disposnibles: ")
         edificio._salas.foreach(n => println(n._ID))
         println("Qué horario de qué sala desea ver? (Ingrese la sala):")
-        var opcion : String = StdIn.readLine()
+        var opcion : String = StdIn.readInt()
         var opcion2 = opcion.asInstanceOf[Int]
 
         var reser : Int = edificio._salas(opcion2)._reservas.length
@@ -86,7 +85,7 @@ class Interfaz {
         opcion = StdIn.readLine()
 
         opcion match {
-            case "Y" => main()
+            case "Y" => main2()
             case "N" => println("Qué tenga una buen día!")
         }
     }
@@ -152,7 +151,7 @@ class Interfaz {
         var opcion0 : String = StdIn.readLine()
 
         opcion0 match {
-            case "Y" => main()
+            case "Y" => main2()
             case "N" => println("Qué tenga una buen día!")
         }
     }
