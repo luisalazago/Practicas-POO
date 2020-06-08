@@ -801,3 +801,16 @@ INFORMACIÓN: Unsupported notification method: $/setTraceNotification
 may 12, 2020 6:07:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 ADVERTENCIA: Unmatched cancel notification for request id 146
 2020.05.12 18:09:50 INFO  shutting down Metals
+2020.05.12 18:25:09 INFO  started: Metals version 0.9.0 in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO'
+2020.05.12 18:25:09 INFO  time: initialize in 0.55s
+2020.05.12 18:25:10 WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.05.12 18:25:10 INFO  no build target: using presentation compiler with only scala-library
+2020.05.12 18:25:13 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\Interfaz.scala
+2020.05.12 18:25:55 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\InterfazUsuario\EdificioOrquideaNegra.scala
+2020.05.12 18:27:32 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Servicios\HoraActual.scala
+2020.05.12 18:27:50 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Rerserva\Reserva.scala
+2020.05.12 18:28:11 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Salon\Salon.scala
+2020.05.12 18:28:26 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Servicios\ServiciosAdmin.scala
+2020.05.12 18:28:48 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\Servicios\ServiciosSala.scala
+2020.05.12 18:28:50 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 2 POO\parcial2\src\main\scala\UsuarioAdmin\UsuarioAdmin.scala
+2020.05.12 18:31:33 INFO  shutting down Metals
