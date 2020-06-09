@@ -8,6 +8,10 @@ object InterfazCohete extends App {
     var cohete : Cohete = new Cohete
     var estado : Boolean = true
     var componentes : List[Acoplamiento] = List()
+    var componente1 : PrimeraEtapa = new PrimeraEtapa
+    var componente2 : SegundaEtapa = new SegundaEtapa
+    var componente3 : TerceraEtapa = new TerceraEtapa
+    var componente4 : EMDrive = new EMDrive
     main2()
 
     def main2() : Unit = {
@@ -20,10 +24,12 @@ object InterfazCohete extends App {
             println("2. Acoplar Piezas")
             println("3. Descoplar Piezas")
             println("4. Asignar Combustible")
-            println("5. Salir")
+            println("5. Ver acoplamineto")
+            println("6. Salir")
             println("=======================================================")
             println("¿Qué desea hacer?: ")
             var opcion : Int = StdIn.readInt()
+            println("=======================================================")
 
             opcion match {
                 case 1 => {
@@ -37,10 +43,12 @@ object InterfazCohete extends App {
                 case 2 => acoplarPiezas()
                 case 3 => desacoplicarPiezas()
                 case 4 => asignarCombustible()
-                case 5 => {
+                case 5 => verAcoplamiento()
+                case 6 => {
                     println("Hasta la próxima misión!")
                     println("=======================================================")
                     estado = false
+                    System.exit(0)
                 }  
             }
         }
@@ -56,6 +64,7 @@ object InterfazCohete extends App {
         println("4. Crear Tercera Etapa del Cohete")
         println("5. Volver al menú")
         var opcion : Int = StdIn.readInt()
+        println("=======================================================")
 
         opcion match {
             case 1 => {
@@ -65,6 +74,7 @@ object InterfazCohete extends App {
                 propulsor._fuerza = fuerza
 
                 componentes = propulsor::componentes
+                componente4 = propulsor
             }
             case 2 => {
                 var primeraEtapa : PrimeraEtapa = new PrimeraEtapa
@@ -73,6 +83,7 @@ object InterfazCohete extends App {
                 primeraEtapa._cantCombustion = combustion
 
                 componentes = primeraEtapa::componentes
+                componente1 = primeraEtapa
             }
             case 3 => {
                 var segundaEtapa : SegundaEtapa = new SegundaEtapa
@@ -81,6 +92,7 @@ object InterfazCohete extends App {
                 segundaEtapa._tiempoDespliegue = tiempo
 
                 componentes = segundaEtapa::componentes
+                componente2 = segundaEtapa
             }
             case 4 => {
                 var terceraEtapa : TerceraEtapa = new TerceraEtapa
@@ -89,6 +101,7 @@ object InterfazCohete extends App {
                 terceraEtapa._fuerzaDireccion = fuerzaT
 
                 componentes = terceraEtapa::componentes
+                componente3 = terceraEtapa
             }
             case 5 => main2()
         }
@@ -105,46 +118,48 @@ object InterfazCohete extends App {
         println("4. Acoplar el propulsor EM Drive")
         println("5. Volver al menú")
         var opcion : Int = StdIn.readInt()
+        println("=======================================================")
 
+        var cantidad : Int = 0
+        cantidad = cohete._componentes.length
         opcion match {
             case 1 => {
                 for(n <- componentes) {
-                    var temp : Try[PrimeraEtapa] = n
-                    temp match {
-                        case Success(s) => cohete.acoplar(s)
-                        case Failure(f) => println("Buscando...") 
+                    if(n == componente1) {
+                        cohete.acoplar(n)
                     }
                 }
             }
             case 2 => {
                 for(n <- componentes) {
-                    var temp2 : Try[SegundaEtapa] = n
-                    temp2 match {
-                        case Success(s) => cohete.acoplar(s)
-                        case Failure(f) => println("Buscando...")
+                    if(n == componente2) {
+                        cohete.acoplar(n)
                     }
                 }
             }
             case 3 => {
                 for(n <- componentes) {
-                    var temp3 : Try[TerceraEtapa] = n
-                    temp3 match {
-                        case Success(s) => cohete.acoplar(s)
-                        case Failure(f) => println("Buscando...")
+                    if(n == componente3) {
+                        cohete.acoplar(n)
                     }
                 }
             }
             case 4 => {
                 for(n <- componentes) {
-                    var temp4 : Try[EMDrive] = n
-                    temp4 match {
-                        case Success(s) => cohete.acoplar(s)
-                        case Failure(f) => println("Buscando...") 
+                    if(n == componente4) {
+                        cohete.acoplar(n)
                     }
                 }
             }
             case 5 => main2()
         }
+        if(cantidad == cohete._componentes.length) {
+            println("Acoplamiento Fallido")
+        }
+        else {
+            println("Acoplamiento Exitoso!")
+        }
+
         acoplarPiezas()
     }
 
@@ -158,50 +173,53 @@ object InterfazCohete extends App {
         println("4. Desacoplar el propulsor EM Drive")
         println("5. Volver al menú")
         var opcion : Int = StdIn.readInt()
+        println("=======================================================")
 
+        var cantidad : Int = 0
+        cantidad = cohete._componentes.length
         opcion match {
             case 1 => {
-                for(n <- cohete._componentes) {
-                    var temp : Try[PrimeraEtapa] = n
-                    temp match {
-                        case Success(s) => cohete.desacoplar(s)
-                        case Failure(f) => println("Buscando...") 
+                for(n <- componentes) {
+                    if(n == componente1) {
+                        cohete.desacoplar(n)
                     }
                 }
             }
             case 2 => {
-                for(n <- cohete._componentes) {
-                    var temp2 : Try[SegundaEtapa] = n
-                    temp2 match {
-                        case Success(s) => cohete.desacoplar(s)
-                        case Failure(f) => println("Buscando...")
+                for(n <- componentes) {
+                    if(n == componente2) {
+                        cohete.desacoplar(n)
                     }
                 }
             }
             case 3 => {
-                for(n <- cohete._componentes) {
-                    var temp3 : Try[TerceraEtapa] = n
-                    temp3 match {
-                        case Success(s) => cohete.desacoplar(s)
-                        case Failure(f) => println("Buscando...")
+                for(n <- componentes) {
+                    if(n == componente3) {
+                        cohete.desacoplar(n)
                     }
                 }
             }
             case 4 => {
-                for(n <- cohete._componentes) {
-                    var temp4 : Try[EMDrive] = n
-                    temp4 match {
-                        case Success(s) => cohete.desacoplar(s)
-                        case Failure(f) => println("Buscando...") 
+                for(n <- componentes) {
+                    if(n == componente4) {
+                        cohete.desacoplar(n)
                     }
                 }
             }
             case 5 => main2()
         }
+        if(cantidad == cohete._componentes.length) {
+            println("Desacoplamiento Fallido")
+        }
+        else {
+            println("Desacoplamiento Exitoso!")
+        }
+
         desacoplicarPiezas()
     }
 
     def asignarCombustible() : Unit = {
+        println("=======================================================")
         println("Cuánta cantidad de Combustible desea asignar?")
         var cantidad : Int = StdIn.readInt()
 
@@ -238,5 +256,77 @@ object InterfazCohete extends App {
         }
         println("Vuelva Pronto ;)")
         println("==============================")
+        System.exit(0)
+    }
+
+    def verAcoplamiento() : Unit = {
+        println("=======================================================")
+        println("Bienvenido a la sección de la visualización del acoplamiento")
+        println("=======================================================")
+        println("A continuación se mostrará las piezas que esan acopladas")
+        println("al cóhete con el propósito de ir a Marte")
+        println("=======================================================")
+        for(n <- cohete._componentes) {
+            var acoplado : Boolean = false
+            n match {
+                case componente1 => {
+                    println("Componente: Primera Etapa [Acoplado]")
+                    acoplado = true
+                } 
+                case componente2 => {
+                    println("Componente: Segunda Etapa [Acoplado]")
+                    acoplado = true
+                }
+                case componente3 => {
+                    println("Componente: Tercera Etapa [Acoplado]")
+                    acoplado = true
+                }
+                case componente4 => {
+                    println("Componente: EM Drive [Acoplado]")
+                    acoplado = true
+                }
+            }
+
+            if(!acoplado) {
+                n match {
+                    case componente1 => {
+                    println("Componente: Primera Etapa [Desacoplado]")
+                    acoplado = true
+                    } 
+                    case componente2 => {
+                        println("Componente: Segunda Etapa [Desacoplado]")
+                        acoplado = true
+                    }
+                    case componente3 => {
+                        println("Componente: Tercera Etapa [Desacoplado]")
+                        acoplado = true
+                    }
+                    case componente4 => {
+                        println("Componente: EM Drive [Desacoplado]")
+                        acoplado = true
+                    }
+                }
+            }
+        }
+        println("=======================================================")
+        println("Desea volver al menú ? [Y/N]:")
+        var opcion : String = StdIn.readLine()
+
+        var estado2 : Boolean = true
+        while(estado2) {
+            if(opcion == "Y") {
+                main2()
+            }
+            if(opcion == "N") {
+                println("Hasta pronto viajero ;)")
+                println("==============================")
+                estado2 = false
+                System.exit(0)
+            }
+            if(opcion != "Y" || opcion != "N") {
+                println("Error")
+                println("==============================")
+            }
+        }
     }
 }
