@@ -75,3 +75,9 @@ ADVERTENCIA: Unmatched cancel notification for request id 6775
 2020.06.08 19:32:17 WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 3 POO'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 2020.06.08 19:32:35 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 3 POO\composite\src\main\scala\Interfaz\InterfazCohete.scala
 2020.06.08 20:01:05 INFO  shutting down Metals
+2020.06.09 12:54:48 INFO  started: Metals version 0.9.0 in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 3 POO'
+2020.06.09 12:54:49 INFO  time: initialize in 1.13s
+2020.06.09 12:54:51 WARN  no build tool detected in workspace 'C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 3 POO'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.06.09 12:54:51 INFO  no build target: using presentation compiler with only scala-library
+2020.06.09 12:54:55 WARN  no build target for: C:\Users\HP\Desktop\Universidad\Tercer Semestre\Programación Orientada a Objetos\Repositorios\Parcial 3 POO\composite\src\main\scala\Interfaz\InterfazCohete.scala
+2020.06.09 17:13:04 INFO  shutting down Metals
