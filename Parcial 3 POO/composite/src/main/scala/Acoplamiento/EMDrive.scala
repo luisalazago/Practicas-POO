@@ -6,7 +6,7 @@ class EMDrive extends Acoplamiento {
     // Atributos
     override var _cantCombustible : Double = 0
     var _fuerza : Int = _
-    var _estadoAcoplado : Boolean = _
+    override var _estadoAcoplado : Boolean = false
 
     /*Getters*/
     def fuerza = _fuerza

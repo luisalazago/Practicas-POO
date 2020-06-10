@@ -5,8 +5,8 @@ import scala.util._
 class TerceraEtapa extends Acoplamiento {
     // Atributos
     override var _cantCombustible : Double = _
+    override var _estadoAcoplado : Boolean = false
     var _fuerzaDireccion : Int = _
-    var _estadoAcoplado : Boolean = _
 
     /*Getters*/
     def fuerzaDireccion = _fuerzaDireccion

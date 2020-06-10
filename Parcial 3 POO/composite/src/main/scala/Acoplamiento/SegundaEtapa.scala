@@ -5,8 +5,8 @@ import scala.util._
 class SegundaEtapa extends Acoplamiento {
     // Atributos
     override var _cantCombustible : Double = _
+    override var _estadoAcoplado : Boolean = false
     var _tiempoDespliegue : Int = _
-    var _estadoAcoplado : Boolean = _
 
     /*Getters*/
     def tiempoDespliegue = _tiempoDespliegue

@@ -5,8 +5,8 @@ import scala.util._
 class PrimeraEtapa extends Acoplamiento {
     // Atributos
     override var _cantCombustible : Double = _
+    override var _estadoAcoplado : Boolean = false
     var _cantCombustion : Double = _
-    var _estadoAcoplado : Boolean = _
 
     /*Getters*/
     def cantCombustion = _cantCombustion

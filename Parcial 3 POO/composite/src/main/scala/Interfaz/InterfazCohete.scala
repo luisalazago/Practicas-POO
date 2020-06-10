@@ -125,29 +125,37 @@ object InterfazCohete extends App {
         opcion match {
             case 1 => {
                 for(n <- componentes) {
-                    if(n == componente1) {
+                    if(n == componente1 && n._estadoAcoplado == false) {
                         cohete.acoplar(n)
+                        n.acoplar()
+                        componente1.acoplar()
                     }
                 }
             }
             case 2 => {
                 for(n <- componentes) {
-                    if(n == componente2) {
+                    if(n == componente2 && n._estadoAcoplado == false) {
                         cohete.acoplar(n)
+                        n.acoplar()
+                        componente2.acoplar()
                     }
                 }
             }
             case 3 => {
                 for(n <- componentes) {
-                    if(n == componente3) {
+                    if(n == componente3 && n._estadoAcoplado == false) {
                         cohete.acoplar(n)
+                        n.acoplar()
+                        componente3.acoplar()
                     }
                 }
             }
             case 4 => {
                 for(n <- componentes) {
-                    if(n == componente4) {
+                    if(n == componente4 && n._estadoAcoplado == false) {
                         cohete.acoplar(n)
+                        n.acoplar()
+                        componente4.acoplar()
                     }
                 }
             }
@@ -182,6 +190,8 @@ object InterfazCohete extends App {
                 for(n <- componentes) {
                     if(n == componente1) {
                         cohete.desacoplar(n)
+                        n.acoplar()
+                        componente1.acoplar()
                     }
                 }
             }
@@ -189,6 +199,8 @@ object InterfazCohete extends App {
                 for(n <- componentes) {
                     if(n == componente2) {
                         cohete.desacoplar(n)
+                        n.acoplar()
+                        componente2.acoplar()
                     }
                 }
             }
@@ -196,6 +208,8 @@ object InterfazCohete extends App {
                 for(n <- componentes) {
                     if(n == componente3) {
                         cohete.desacoplar(n)
+                        n.acoplar()
+                        componente3.acoplar()
                     }
                 }
             }
@@ -203,6 +217,8 @@ object InterfazCohete extends App {
                 for(n <- componentes) {
                     if(n == componente4) {
                         cohete.desacoplar(n)
+                        n.acoplar()
+                        componente4.acoplar()
                     }
                 }
             }
@@ -268,44 +284,22 @@ object InterfazCohete extends App {
         println("=======================================================")
         for(n <- cohete._componentes) {
             var acoplado : Boolean = false
-            n match {
-                case componente1 => {
-                    println("Componente: Primera Etapa [Acoplado]")
-                    acoplado = true
-                } 
-                case componente2 => {
-                    println("Componente: Segunda Etapa [Acoplado]")
-                    acoplado = true
-                }
-                case componente3 => {
-                    println("Componente: Tercera Etapa [Acoplado]")
-                    acoplado = true
-                }
-                case componente4 => {
-                    println("Componente: EM Drive [Acoplado]")
-                    acoplado = true
-                }
-            }
 
-            if(!acoplado) {
-                n match {
-                    case componente1 => {
-                    println("Componente: Primera Etapa [Desacoplado]")
-                    acoplado = true
-                    } 
-                    case componente2 => {
-                        println("Componente: Segunda Etapa [Desacoplado]")
-                        acoplado = true
-                    }
-                    case componente3 => {
-                        println("Componente: Tercera Etapa [Desacoplado]")
-                        acoplado = true
-                    }
-                    case componente4 => {
-                        println("Componente: EM Drive [Desacoplado]")
-                        acoplado = true
-                    }
-                }
+            if(n == componente1) {
+                println("Componente: Primera Etapa [Acoplado]")
+                acoplado = true
+            }
+            else if(n == componente2) {
+                println("Componente: Segunda Etapa [Acoplado]")
+                acoplado = true
+            }
+            else if(n == componente3) {
+                println("Componente: Tercera Etapa [Acoplado]")
+                acoplado = true
+            }
+            else if(n == componente4) {
+                println("Componente: EM Drive [Acoplado]")
+                acoplado = true
             }
         }
         println("=======================================================")

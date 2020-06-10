@@ -5,8 +5,8 @@ import scala.util._
 class Cohete extends Acoplamiento {
     // Atributos
     override var _cantCombustible : Double = _
+    override var _estadoAcoplado : Boolean = false
     var _componentes : List[Acoplamiento] = List()
-    var _estadoAcoplado : Boolean = _
 
     /*Getters*/
     def estadoAcoplado = _estadoAcoplado
